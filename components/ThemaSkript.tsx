@@ -1,8 +1,13 @@
 /**
  * Das Skript, das vor dem ersten Bild laeuft.
  *
- * Es muss blockierend im <head> stehen und darf nicht aus einer Datei
- * nachgeladen werden. Der Grund ist eine Zehntelsekunde: der Browser
+ * Es steht ganz oben in <body> — bewusst nicht in einem selbst
+ * gerenderten <head>, siehe die Begruendung in app/[lang]/layout.tsx.
+ * Entscheidend ist nicht, ob es in <head> oder <body> steht, sondern
+ * dass es blockierend ist und vor dem Inhalt kommt; beides trifft hier
+ * zu. Nachgeladen aus einer Datei darf es nicht werden.
+ *
+ * Der Grund ist eine Zehntelsekunde: der Browser
  * zeichnet die Seite, sobald er kann. Kommt die Entscheidung ueber das
  * Farbschema auch nur einen Frame spaeter, sieht der Besucher erst das
  * helle Bild und dann den Umschlag ins Dunkle. Dieses Aufblitzen ist

@@ -84,20 +84,42 @@ export default function LangLayout({
   const d = getDictionary(lang)
 
   return (
-    /* suppressHydrationWarning gilt nur fuer dieses eine Element und nur
-       fuer seine Attribute: das Skript unten schreibt data-theme,
-       data-wahl und data-js auf <html>, bevor React hydriert. Ohne den
-       Hinweis meldet React den Unterschied als Fehler — obwohl er hier
-       gewollt ist und das Kind darunter weiterhin normal geprueft wird. */
+    /*
+      Hier steht KEIN eigenes <head>, und das ist wichtig.
+
+      Es stand einmal eines hier, mit dem Farbschema-Skript darin. Auf
+      dem eigenen Rechner lief alles; live auf Netlify warf React
+      Fehler 418 und 423, das Skript verlor seine Wirkung und der
+      Farbschema-Knopf verschwand. Grund: Netlify haengt nach dem Build
+      zwei <meta> und einen Kommentar in den <head>. Sobald man <head>
+      selbst rendert, gehoert er React, und React vergleicht seine
+      Kinder beim Hydrieren eins zu eins — die zwei fremden <meta> sind
+      dann ein Widerspruch. 418 heisst „passt nicht", 423 heisst „ich
+      baue die ganze Seite neu auf", und beim Neuaufbau verliert <html>
+      die Attribute, die das Skript gesetzt hatte.
+
+      Ueberlaesst man den <head> dagegen Next, traegt Next dort ein, und
+      React reicht Fremdes durch. Das Skript steht deshalb ganz oben in
+      <body>: frueh genug, um vor dem ersten Bild zu laufen (Bild fuer
+      Bild nachgemessen, kein Aufblitzen), und ausserhalb des Bereichs,
+      in dem ein Hoster dazwischenfunken kann.
+
+      Die Lehre ist allgemeiner als Netlify: jedes CDN darf in den
+      <head> schreiben. Eine Seite, die daran zerbricht, ist zu streng
+      gebaut.
+
+      suppressHydrationWarning bleibt und gilt nur fuer dieses eine
+      Element und nur fuer seine Attribute: das Skript schreibt
+      data-theme, data-wahl und data-js auf <html>, bevor React
+      hydriert. Der Inhalt darunter wird weiterhin normal geprueft.
+    */
     <html
       lang={localeNames[lang].htmlLang}
       className={`${fraunces.variable} ${inter.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <ThemaSkript />
-      </head>
       <body className="min-h-dvh bg-bg text-fg antialiased">
+        <ThemaSkript />
         <a
           href="#inhalt"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-fg"
