@@ -57,11 +57,19 @@ export function CoffeeCard({
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-wrap gap-x-6 gap-y-1 py-3">
+    // Auf dem Telefon untereinander, ab 640 px nebeneinander.
+    //
+    // Vorher standen sie immer nebeneinander. Bei 390 px blieben nach
+    // Rand und Beschriftungsspalte 190 px fuer den Wert — „Schokolade ·
+    // Orangenschale · Karamell" quetschte sich dort in drei Zeilen an
+    // den rechten Rand, waehrend links die halbe Zeile leer blieb. Zwei
+    // Spalten sind eine Entscheidung fuer breite Schirme, nicht fuer
+    // alle.
+    <div className="py-3 sm:flex sm:flex-wrap sm:gap-x-6">
       {/* Die Beschriftungsspalte ist in vier Sprachen unterschiedlich lang:
           w-32 fest wuerde im Spanischen umbrechen. min-w statt w. */}
-      <dt className="min-w-[8rem] shrink-0 text-muted">{label}</dt>
-      <dd className="min-w-0">{value}</dd>
+      <dt className="text-muted sm:min-w-[8rem] sm:shrink-0">{label}</dt>
+      <dd className="mt-0.5 min-w-0 sm:mt-0">{value}</dd>
     </div>
   )
 }

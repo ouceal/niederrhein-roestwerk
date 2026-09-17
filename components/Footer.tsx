@@ -3,6 +3,22 @@ import { site, studio } from '@/content/site'
 import { getDictionary, path, type Locale, type PageKey } from '@/content/i18n'
 import { Shell } from './Shell'
 
+/**
+ * Auf dem Telefon sind die Fusszeilen-Links 44 px hoch, ab 640 px wieder
+ * kompakt.
+ *
+ * Gemessen waren sie vorher 16 px — die Hoehe der Schrift, ohne jede
+ * Zugabe. Sieben solcher Links untereinander sind auf einem Telefon ein
+ * Ratespiel: man trifft „Impressum" statt „Datenschutz", und weil sie
+ * so dicht stehen, sieht die Fusszeile ausserdem nach einem Textklumpen
+ * aus statt nach einer Liste. Die Zugabe loest beides auf einmal.
+ *
+ * `-my-*` gleicht die Zugabe am oberen und unteren Ende der Liste
+ * wieder aus, damit die Spalten oben auf gleicher Hoehe anfangen.
+ */
+const fussLink =
+  'flex min-h-[2.75rem] items-center text-fg no-underline hover:text-accent sm:min-h-0'
+
 export function Footer({ lang }: { lang: Locale }) {
   const d = getDictionary(lang)
   const year = 2026 // statischer Export: fest, damit HTML und Client identisch bleiben
@@ -29,10 +45,10 @@ export function Footer({ lang }: { lang: Locale }) {
 
           <nav aria-label={d.nav.ariaSeiten}>
             <p className="text-xs uppercase tracking-[0.18em] text-muted">{d.footer.spalteSeiten}</p>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="mt-4 text-sm sm:mt-4 sm:space-y-2">
               {seiten.map((e) => (
                 <li key={e.key}>
-                  <Link href={path(lang, e.key)} className="text-fg no-underline hover:text-accent">
+                  <Link href={path(lang, e.key)} className={fussLink}>
                     {e.label}
                   </Link>
                 </li>
@@ -42,10 +58,10 @@ export function Footer({ lang }: { lang: Locale }) {
 
           <nav aria-label={d.nav.ariaRecht}>
             <p className="text-xs uppercase tracking-[0.18em] text-muted">{d.footer.spalteRecht}</p>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="mt-4 text-sm sm:mt-4 sm:space-y-2">
               {recht.map((e) => (
                 <li key={e.key}>
-                  <Link href={path(lang, e.key)} className="text-fg no-underline hover:text-accent">
+                  <Link href={path(lang, e.key)} className={fussLink}>
                     {e.label}
                   </Link>
                 </li>
@@ -55,14 +71,16 @@ export function Footer({ lang }: { lang: Locale }) {
 
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-muted">{d.footer.spalteKontakt}</p>
-            <ul className="mt-4 space-y-2 text-sm">
+            <ul className="mt-4 text-sm sm:mt-4 sm:space-y-2">
               <li>
                 {/* TODO: echte Adresse eintragen, siehe Impressum */}
-                <a href={`mailto:${site.contact.email}`} className="text-fg no-underline hover:text-accent">
+                <a href={`mailto:${site.contact.email}`} className={`${fussLink} break-all`}>
                   {site.contact.email}
                 </a>
               </li>
-              <li className="text-muted">{site.contact.phone}</li>
+              <li className="flex min-h-[2.75rem] items-center text-muted sm:min-h-0">
+                {site.contact.phone}
+              </li>
             </ul>
           </div>
         </div>
@@ -85,7 +103,7 @@ export function Footer({ lang }: { lang: Locale }) {
               href={studio.url}
               target="_blank"
               rel="noopener"
-              className="text-muted no-underline underline-offset-4 transition-colors hover:text-accent hover:underline"
+              className="inline-flex min-h-[2.75rem] items-center text-muted no-underline underline-offset-4 transition-colors hover:text-accent hover:underline sm:min-h-0"
             >
               {studio.text}
             </a>

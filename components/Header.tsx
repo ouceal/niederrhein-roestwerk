@@ -44,7 +44,9 @@ export function Header({ lang, page }: { lang: Locale; page?: PageKey }) {
         <div className="flex items-center justify-between gap-6 py-4 md:py-5">
           <Link
             href={path(lang)}
-            className="font-serif text-lg tracking-tight text-fg no-underline hover:text-accent"
+            // -my-2/py-2 vergroessert die Trefferflaeche auf 44 px, ohne die
+            // Kopfzeile hoeher zu machen: die Zugabe wird aussen wieder abgezogen.
+            className="-my-2 inline-flex min-h-[2.75rem] items-center py-2 font-serif text-lg tracking-tight text-fg no-underline hover:text-accent"
           >
             {d.meta.siteTitle}
           </Link>

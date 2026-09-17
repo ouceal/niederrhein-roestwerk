@@ -29,22 +29,22 @@ export function Kontakt({ lang }: { lang: Locale }) {
               </Prose>
 
               <dl className="mt-10 divide-y divide-line border-t border-line text-sm">
-                <div className="flex flex-wrap gap-x-6 gap-y-1 py-4">
-                  <dt className="min-w-[6rem] shrink-0 text-muted">{d.kontakt.labelEmail}</dt>
-                  <dd className="min-w-0">
+                <div className="py-4 sm:flex sm:flex-wrap sm:gap-x-6">
+                  <dt className="text-muted sm:min-w-[6rem] sm:shrink-0">{d.kontakt.labelEmail}</dt>
+                  <dd className="mt-0.5 min-w-0 sm:mt-0">
                     {/* TODO: echte Adresse, siehe content/site.ts */}
-                    <a href={`mailto:${site.contact.email}`} className="hover:text-accent">
+                    <a href={`mailto:${site.contact.email}`} className="inline-flex min-h-[2.75rem] items-center hover:text-accent sm:min-h-0">
                       {site.contact.email}
                     </a>
                   </dd>
                 </div>
-                <div className="flex flex-wrap gap-x-6 gap-y-1 py-4">
-                  <dt className="min-w-[6rem] shrink-0 text-muted">{d.kontakt.labelTelefon}</dt>
-                  <dd className="min-w-0 text-muted">{site.contact.phone}</dd>
+                <div className="py-4 sm:flex sm:flex-wrap sm:gap-x-6">
+                  <dt className="text-muted sm:min-w-[6rem] sm:shrink-0">{d.kontakt.labelTelefon}</dt>
+                  <dd className="mt-0.5 min-w-0 text-muted sm:mt-0">{site.contact.phone}</dd>
                 </div>
-                <div className="flex flex-wrap gap-x-6 gap-y-1 py-4">
-                  <dt className="min-w-[6rem] shrink-0 text-muted">{d.kontakt.labelOrt}</dt>
-                  <dd className="min-w-0">{d.footer.beschreibung}</dd>
+                <div className="py-4 sm:flex sm:flex-wrap sm:gap-x-6">
+                  <dt className="text-muted sm:min-w-[6rem] sm:shrink-0">{d.kontakt.labelOrt}</dt>
+                  <dd className="mt-0.5 min-w-0 sm:mt-0">{d.footer.beschreibung}</dd>
                 </div>
               </dl>
             </div>
@@ -94,7 +94,7 @@ export function Kontakt({ lang }: { lang: Locale }) {
                   name="einwilligung"
                   value="ja"
                   required
-                  className="mt-1 h-4 w-4 shrink-0 accent-[#a8431e]"
+                  className="mt-0.5 h-6 w-6 shrink-0 accent-[#a8431e]"
                 />
                 <label htmlFor="k-consent" className="text-sm leading-relaxed text-muted">
                   {d.kontakt.einwilligung[0]}

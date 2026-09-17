@@ -78,7 +78,7 @@ export function Newsletter({ lang }: { lang: Locale }) {
                 name="einwilligung"
                 value="ja"
                 required
-                className="mt-1 h-4 w-4 shrink-0 accent-[#a8431e]"
+                className="mt-0.5 h-6 w-6 shrink-0 accent-[#a8431e]"
               />
               <label htmlFor="nl-consent" className="text-sm leading-relaxed opacity-90">
                 {d.newsletter.einwilligung[0]}
