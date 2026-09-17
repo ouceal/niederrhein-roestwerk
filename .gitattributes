@@ -1,0 +1,20 @@
+# Zeilenenden festnageln.
+#
+# Ohne diese Datei entscheidet jede Arbeitskopie fuer sich: Git for
+# Windows stellt standardmaessig auf CRLF um, Linux und macOS lassen LF.
+# Sobald zwei Rechner am selben Repo arbeiten, meldet Git dann Dateien
+# als geaendert, an denen niemand etwas geaendert hat — und ein Diff,
+# der jede Zeile rot faerbt, verdeckt die eine, um die es ging.
+#
+# `text=auto eol=lf` heisst: im Repo steht immer LF, egal wer schreibt.
+* text=auto eol=lf
+
+# Binaerdateien nie anfassen.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff2 binary
+*.mp4 binary
+*.webm binary

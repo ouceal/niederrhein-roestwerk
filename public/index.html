@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Niederrhein Röstwerk</title>
+    <meta name="robots" content="noindex, follow" />
+    <!--
+      Diese Datei liegt unter /, wo es keine Seite gibt: die Website
+      beginnt bei /de/, /en/, /it/ oder /es/.
+
+      Zwei Wege fuehren von hier weiter, und beide muessen funktionieren:
+
+        1. Auf Netlify greift vorher eine serverseitige Weiterleitung
+           (netlify.toml), die die Accept-Language des Browsers auswertet.
+           Diese Datei wird dort normalerweise gar nicht ausgeliefert.
+
+        2. Ueberall sonst — beim lokalen Vorschauen, auf einem anderen
+           Host, in einer Offline-Kopie — springt das Skript unten ein.
+
+      Und wenn beides ausfaellt, weil JavaScript aus ist, stehen die vier
+      Links sichtbar da. Eine Weiterleitungsseite ohne sichtbaren Ausweg
+      ist eine Sackgasse, und das ist der haeufigste Fehler an dieser Stelle.
+    -->
+    <link rel="alternate" hreflang="de-DE" href="/de/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="it-IT" href="/it/" />
+    <link rel="alternate" hreflang="es-ES" href="/es/" />
+    <link rel="alternate" hreflang="x-default" href="/de/" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fbf7f3;
+        --fg: #1c1512;
+        --muted: #6b5b50;
+        --line: #e0d4c8;
+        --accent: #a8431e;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #17110e;
+          --fg: #f6efe8;
+          --muted: #b9a89b;
+          --line: #3a2c24;
+          --accent: #d2673d;
+        }
+      }
+      html,
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      body {
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 2rem 1.5rem;
+        font: 400 1rem/1.6 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      }
+      main {
+        max-width: 26rem;
+        text-align: center;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font: 400 1.5rem/1.2 Georgia, "Times New Roman", serif;
+        letter-spacing: -0.01em;
+      }
+      p {
+        margin: 0 0 2rem;
+        color: var(--muted);
+        font-size: 0.9375rem;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--line);
+        color: var(--fg);
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus-visible {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Niederrhein Röstwerk</h1>
+      <p>Choose a language · Sprache wählen · Scegli la lingua · Elige un idioma</p>
+      <ul>
+        <li><a href="/de/" hreflang="de-DE" lang="de">Deutsch</a></li>
+        <li><a href="/en/" hreflang="en" lang="en">English</a></li>
+        <li><a href="/it/" hreflang="it-IT" lang="it">Italiano</a></li>
+        <li><a href="/es/" hreflang="es-ES" lang="es">Español</a></li>
+      </ul>
+    </main>
+    <script>
+      // Die erste Browsersprache, die wir anbieten, gewinnt; sonst Deutsch.
+      // replace statt assign: der Zurueck-Knopf soll nicht auf dieser
+      // Seite landen und sofort wieder weiterleiten.
+      (function () {
+        try {
+          var haben = ['de', 'en', 'it', 'es']
+          var wunsch = navigator.languages || [navigator.language || 'de']
+          for (var i = 0; i < wunsch.length; i++) {
+            var kurz = String(wunsch[i]).toLowerCase().slice(0, 2)
+            if (haben.indexOf(kurz) !== -1) {
+              location.replace('/' + kurz + '/')
+              return
+            }
+          }
+          location.replace('/de/')
+        } catch (e) {
+          /* Bleibt bei der sichtbaren Auswahl. Besser als ein weisser Schirm. */
+        }
+      })()
+    </script>
+  </body>
+</html>

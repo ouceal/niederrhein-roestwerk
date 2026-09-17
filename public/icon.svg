@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Niederrhein Röstwerk">
+  <!--
+    Markenzeichen: eine Bohne, auf das Noetigste reduziert.
+    Der Koerper ist eine gekippte Ellipse, die Mittelnaht eine einzelne
+    S-Kurve. Espresso als Grund, Terracotta als Akzent — dieselben zwei
+    Farben wie auf der Seite. Eigene Zeichnung, nichts nachgebaut.
+  -->
+  <rect width="32" height="32" rx="7" fill="#1C1512"/>
+  <g transform="rotate(-28 16 16)">
+    <ellipse cx="16" cy="16" rx="7.4" ry="10" fill="#A8431E"/>
+    <path d="M16 6.6c-3 3.1-3 6.3 0 9.4s3 6.3 0 9.4"
+          fill="none" stroke="#1C1512" stroke-width="1.9" stroke-linecap="round"/>
+  </g>
+</svg>

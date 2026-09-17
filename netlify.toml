@@ -1,0 +1,103 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ── Sprachweiche auf "/" ─────────────────────────────────────────────────
+# Serverseitig und damit ohne Umweg ueber eine Zwischenseite. Netlify liest
+# den Accept-Language-Header des Browsers aus.
+#
+# force = true ist noetig, weil unter / eine echte Datei liegt
+# (public/index.html). Ohne force gewinnt die Datei und die Weiche greift
+# nie. Die Datei bleibt trotzdem: sie ist der Ausweg fuer jeden anderen
+# Host und fuer die lokale Vorschau.
+#
+# Reihenfolge zaehlt: die erste passende Regel gewinnt, also stehen die
+# Sprachen mit Bedingung vor der bedingungslosen Regel.
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true
+  conditions = { Language = ["en"] }
+
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 302
+  force = true
+  conditions = { Language = ["it"] }
+
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  force = true
+  conditions = { Language = ["es"] }
+
+# Alles, was uebrig bleibt — auch Deutsch selbst — geht nach /de/.
+[[redirects]]
+  from = "/"
+  to = "/de/"
+  status = 302
+  force = true
+
+# ── 404, je Sprache ──────────────────────────────────────────────────────
+# Wer sich unter /es/ vertippt, bekommt die spanische Fehlerseite. Das
+# loest der Server, nicht die Seite: ein Skript, das den Text nach dem
+# Laden austauscht, bricht Reacts Hydration.
+#
+# Ohne force greifen diese Regeln nur, wenn wirklich keine Datei gepasst
+# hat — echte Seiten, Bilder und Schriften bleiben unberuehrt. Die
+# sprachspezifischen Regeln stehen vor der allgemeinen, weil die erste
+# passende gewinnt.
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/not-found/"
+  status = 404
+
+[[redirects]]
+  from = "/it/*"
+  to = "/it/non-trovato/"
+  status = 404
+
+[[redirects]]
+  from = "/es/*"
+  to = "/es/no-encontrado/"
+  status = 404
+
+[[redirects]]
+  from = "/*"
+  to = "/de/nicht-gefunden/"
+  status = 404
+
+# Fingerprintete Assets und Medien duerfen ewig im Cache liegen.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    # Die Seite laedt nichts von fremden Hosts. Schriften liegen lokal,
+    # es gibt kein Analytics und keine externen Skripte.
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'"
