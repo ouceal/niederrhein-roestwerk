@@ -37,6 +37,7 @@ export const it: Dictionary = {
 
   thema: {
     aria: 'Scegli il tema',
+    titel: 'Tema',
     system: 'Sistema',
     hell: 'Chiaro',
     dunkel: 'Scuro',
@@ -50,6 +51,7 @@ export const it: Dictionary = {
     ariaSeiten: 'Pagine',
     ariaRecht: 'Informazioni legali',
     ariaSprache: 'Scegli la lingua',
+    ariaMenue: 'Menu',
     sprache: 'Lingua',
     zumInhalt: 'Vai al contenuto',
   },

@@ -46,6 +46,8 @@ export type Dictionary = {
   thema: {
     /** aria-label der Wahl, z. B. „Farbschema wählen" */
     aria: string
+    /** Ueberschrift ueber der Liste im schmalen Menue */
+    titel: string
     system: string
     hell: string
     dunkel: string
@@ -60,6 +62,8 @@ export type Dictionary = {
     ariaSeiten: string
     ariaRecht: string
     ariaSprache: string
+    /** aria-label des Burger-Knopfs */
+    ariaMenue: string
     /**
      * Nur das Wort „Sprache". Der Knopf setzt daraus zusammen mit dem
      * eigenen Namen der Sprache seinen zugaenglichen Namen: „Sprache:

@@ -36,6 +36,7 @@ export function SprachUmschalter({
   page,
   label,
   wortSprache,
+  variante = 'knopf',
 }: {
   aktuell: Locale
   page?: PageKey
@@ -43,10 +44,20 @@ export function SprachUmschalter({
   label: string
   /** nur das Wort „Sprache" — ergibt mit dem Namen „Sprache: Deutsch" */
   wortSprache: string
+  /**
+   * `knopf` klappt auf, `liste` zeigt alles nebeneinander.
+   *
+   * Im schmalen Menue ist die Liste richtig: dort ist ohnehin schon
+   * aufgeklappt, und ein Aufklappen im Aufgeklappten ist eine Tuer
+   * hinter einer Tuer. Die vier Sprachen stehen dort als Plaettchen
+   * nebeneinander — ein Fingertipp statt zwei.
+   */
+  variante?: 'knopf' | 'liste'
 }) {
   const box = useRef<HTMLDetailsElement>(null)
 
   useEffect(() => {
+    if (variante !== 'knopf') return
     const el = box.current
     if (!el) return
 
@@ -81,7 +92,33 @@ export function SprachUmschalter({
       document.removeEventListener('pointerdown', beiZeiger)
       el.removeEventListener('focusout', beiFokusweg)
     }
-  }, [])
+  }, [variante])
+
+  if (variante === 'liste') {
+    return (
+      <nav aria-label={label}>
+        <ul className="flex flex-wrap gap-2">
+          {locales.map((l) => {
+            const ist = l === aktuell
+            return (
+              <li key={l}>
+                <a
+                  href={path(l, page)}
+                  hrefLang={localeNames[l].htmlLang}
+                  lang={localeNames[l].htmlLang}
+                  aria-current={ist ? 'true' : undefined}
+                  className="plaettchen font-sans tracking-[0.1em]"
+                >
+                  <span className="sr-only">{localeNames[l].name}</span>
+                  <span aria-hidden="true">{localeNames[l].label}</span>
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    )
+  }
 
   return (
     <nav aria-label={label}>

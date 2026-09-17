@@ -34,11 +34,22 @@ export function ThemaWahl({
   system,
   hell,
   dunkel,
+  variante = 'knopf',
+  titel,
 }: {
   aria: string
   system: string
   hell: string
   dunkel: string
+  /** `knopf` klappt auf, `liste` zeigt die drei nebeneinander. */
+  variante?: 'knopf' | 'liste'
+  /**
+   * Ueberschrift ueber der Liste. Sie gehoert INS Bauteil und nicht
+   * daneben, weil ohne JavaScript das ganze Bauteil verschwindet —
+   * eine Ueberschrift, die dann allein stehen bliebe, waere eine
+   * Beschriftung ohne Beschriftetes.
+   */
+  titel?: string
 }) {
   const box = useRef<HTMLDetailsElement>(null)
   const [wahl, setWahl] = useState<Wahl | null>(null)
@@ -66,6 +77,7 @@ export function ThemaWahl({
   // Escape, Klick daneben, Fokus verlassen — dasselbe wie bei der
   // Sprachwahl, aus demselben Grund: <details> kann das nicht allein.
   useEffect(() => {
+    if (variante !== 'knopf') return
     const el = box.current
     if (!el) return
     const zu = () => {
@@ -90,7 +102,7 @@ export function ThemaWahl({
       document.removeEventListener('pointerdown', beiZeiger)
       el.removeEventListener('focusout', beiFokusweg)
     }
-  }, [])
+  }, [variante])
 
   function anwenden(w: Wahl) {
     const r = document.documentElement
@@ -130,6 +142,33 @@ export function ThemaWahl({
     { wert: 'hell', text: hell },
     { wert: 'dunkel', text: dunkel },
   ]
+
+  if (variante === 'liste') {
+    return (
+      // Dieselbe Klasse wie beim Knopf: ohne JavaScript ist das hier weg.
+      // Drei Schalter, die nichts schalten, sind schlimmer als keine.
+      <div className="themawahl">
+        {titel ? (
+          <p className="mb-3 font-sans text-xs uppercase tracking-[0.18em] text-muted">{titel}</p>
+        ) : null}
+        <ul className="flex flex-wrap gap-2" role="group" aria-label={aria}>
+          {eintraege.map((e) => (
+            <li key={e.wert}>
+              <button
+                type="button"
+                aria-pressed={wahl === null ? undefined : wahl === e.wert}
+                onClick={() => waehlen(e.wert)}
+                data-fuer={e.wert}
+                className="plaettchen"
+              >
+                {e.text}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
 
   return (
     <div className="themawahl">
