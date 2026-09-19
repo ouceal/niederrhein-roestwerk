@@ -36,18 +36,40 @@ export function UeberUns({ lang }: { lang: Locale }) {
         </Shell>
       </Section>
 
-      <Section tone="surface" className="!pt-0">
+      {/* Das Bandbild wird auf dem Telefon hoeher.
+          21:9 ist ein Kinoformat und braucht Breite. Im Shell eines
+          Telefons bleiben davon 380 px, und 380 : 21/9 sind 163 px —
+          gemessen. Das ist kein Bild mehr, das ist ein Streifen, und
+          von einer Aufnahme mit Sonne, Huegeln, Nebel und einem
+          Menschen darin blieb genau der mittlere Waagerechte uebrig.
+          Auf dem Rechner stimmt dasselbe Format, dort ist die Spalte
+          1152 px breit.
+
+          3:2 auf dem Telefon sind 253 px. Beschnitten wird dabei die
+          Breite, nicht die Hoehe — die Vorlage ist 2400x1018 —, und
+          nachgesehen: Sonne, Huegelkamm und der Pflücker bleiben alle
+          im Bild. Ab 640 px 16:9, ab 1024 px wieder 21:9.
+
+          Dasselbe auf den Seiten Kaffee und Roesterei. heroes.tsx
+          macht es bei den grossen Heroes laengst so; diese drei
+          Bandbilder waren die Stellen, die es nicht mitbekommen
+          haben. */}
+      <Section tone="surface" className="!pt-0 !pb-0">
         <Shell>
           <Figure
             image={img.heroPlantage}
             alt={d.alt.heroPlantage}
             sizes="100vw"
-            className="aspect-[21/9] overflow-hidden"
+            className="aspect-[3/2] overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]"
           />
         </Shell>
       </Section>
 
-      <Section tone="surface" className="!pt-16">
+      {/* Zwischen Bild und Text lagen vorher 142 px: der untere Abstand
+          dieser Sektion plus der obere der naechsten. Auf dem Telefon
+          war das mehr Schwarz als Bild. Der untere faellt weg, der
+          obere bleibt und traegt den Abstand allein. */}
+      <Section tone="surface" className="!pt-12 sm:!pt-16">
         <Shell>
           <div className="grid gap-16 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-24">
             <div className="space-y-16">

@@ -22,18 +22,23 @@ export function Kaffee({ lang }: { lang: Locale }) {
         </Shell>
       </Section>
 
-      <Section tone="surface" className="!pt-0 pb-section">
+      {/* Hoeher auf dem Telefon, Begruendung in
+          components/pages/UeberUns.tsx. Hier ist die Vorlage quadratisch
+          (2048x2048): im 21:9-Kasten blieb von der Bohnenschuettung ein
+          waagerechter Ausschnitt uebrig, der oben und unten mitten durch
+          die Bohnen ging. Bei 3:2 liegt die Schuettung ganz im Bild. */}
+      <Section tone="surface" className="!pt-0 !pb-0">
         <Shell>
           <Figure
             image={img.bohnenMakro}
             alt={d.alt.bohnenMakro}
             sizes="100vw"
-            className="aspect-[21/9] overflow-hidden"
+            className="aspect-[3/2] overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]"
           />
         </Shell>
       </Section>
 
-      <Section tone="surface" className="!pt-16">
+      <Section tone="surface" className="!pt-12 sm:!pt-16">
         <Shell>
           {/* Sichtbar ist die Ueberschrift nicht noetig, fuer die
               Gliederung schon: sonst springt die Struktur von h1 auf h3. */}

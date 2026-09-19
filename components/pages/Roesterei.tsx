@@ -36,7 +36,14 @@ export function Roesterei({ lang }: { lang: Locale }) {
             image={img.trocknung}
             alt={d.alt.trocknung}
             sizes="100vw"
-            className="aspect-[21/9] overflow-hidden"
+            /* Hoeher auf dem Telefon, Begruendung in
+               components/pages/UeberUns.tsx. Die Vorlage ist 2000x1342,
+               also selbst 3:2 — auf dem Telefon ist damit die ganze
+               Aufnahme zu sehen, statt nur des Streifens, der im
+               21:9-Kasten von ihr uebrig blieb. Weg waren dort der
+               Himmel, die Sonne und der Horizont; geblieben waren die
+               Trockenbetten. */
+            className="aspect-[3/2] overflow-hidden sm:aspect-[16/9] lg:aspect-[21/9]"
           />
           <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="min-w-0">
