@@ -64,12 +64,22 @@ export type ImgKey = keyof typeof img
 
 /**
  * Video. Masse aus kaffee/README.md, Poster-Masse aus den Dateien selbst.
- * WebM steht immer VOR MP4 — Chrome und Firefox nehmen die kleinere Datei,
- * Safari faellt auf MP4 zurueck.
+ *
+ * NUR MP4 (H.264 High 5.0, yuv420p, moov vorn). Hier stand vorher eine
+ * WebM-Fassung davor, mit der Begruendung, Chrome und Firefox naehmen die
+ * kleinere Datei und Safari falle auf MP4 zurueck. Der erste Teil stimmte,
+ * der zweite nicht: das <source type> lautete schlicht „video/webm", und
+ * iOS-Safari meldet seit 17.4 fuer VP9 „vielleicht". Es nimmt die Datei
+ * also, und wenn das Geraet sie dann doch nicht dekodiert, faellt es NICHT
+ * auf die naechste Quelle zurueck — es bleibt beim Standbild stehen. Genau
+ * so sah es auf dem iPhone aus.
+ *
+ * Gespart hat die WebM-Fassung 267 KB fuer Chrome und Firefox. Gekostet
+ * hat sie das Hero auf dem Geraet, mit dem die meisten kommen. Eine Datei,
+ * die ueberall laeuft, ist der bessere Handel.
  */
 export const video = {
   heroLoop: {
-    webm: '/video/hero-loop-kaffeebohnen.webm',
     mp4: '/video/hero-loop-kaffeebohnen.mp4',
     poster: '/video/hero-loop-kaffeebohnen-poster.webp',
     w: 1920,
