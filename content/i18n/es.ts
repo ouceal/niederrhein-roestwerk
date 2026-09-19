@@ -274,6 +274,21 @@ export const es: Dictionary = {
     ],
   },
 
+  team: {
+    kicker: 'Quién está detrás',
+    titel: 'Dos personas, un mismo recorrido',
+    leute: [
+      {
+        rolle: 'Ventas y clientes en Europa',
+        text: 'Oussama viene de ventas. Todo lo relacionado con la venta en Europa pasa por él: quién recibe el café, en qué condiciones — y la regla de prometer solo lo que se puede cumplir.',
+      },
+      {
+        rolle: 'Compra y transporte desde Etiopía',
+        text: 'Antes de este tostadero, Simo importaba café a China. Conoce el camino del origen al puerto y se ocupa de la compra, los papeles y el transporte — de Etiopía hasta Europa.',
+      },
+    ],
+  },
+
   kontakt: {
     kicker: 'Contacto',
     h1: 'Escríbenos',
@@ -359,7 +374,8 @@ export const es: Dictionary = {
     bildnachweisTitel: 'Créditos de las imágenes',
     bildnachweisKi:
       'Las imágenes de las regiones de cultivo que aparecen en esta web están generadas con inteligencia artificial. Ilustran la región de origen y no muestran ninguna finca concreta, ninguna empresa determinada ni ninguna persona real.',
-    bildnachweisRest: 'El resto de las imágenes proceden de bancos con licencia.',
+    bildnachweisRest:
+      'Los retratos de la página «Sobre nosotros» son fotografías propias. El resto de las imágenes proceden de bancos con licencia.',
   },
 
   datenschutz: {
@@ -445,6 +461,8 @@ export const es: Dictionary = {
     ernteBananen: 'Recolección manual de cerezas de café entre plataneras en el altiplano',
     kirschenHaende: 'Las manos de un caficultor con cerezas de café rojas recién recogidas',
     textur: 'Textura a pantalla completa de granos de café tostados',
+    portraitOussama: 'Retrato de Oussama Allali',
+    portraitSimo: 'Retrato de Simo Kaddouri',
     og: 'Imagen de vista previa para redes sociales, WhatsApp y LinkedIn',
   },
   videoAlt: 'Granos de café tostados con vapor subiendo',

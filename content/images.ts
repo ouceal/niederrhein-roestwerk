@@ -41,6 +41,14 @@ export const img = {
 
   textur: { src: '/textur/textur-kaffeebohnen-hintergrund.webp', w: 2400, h: 1600 },
 
+  /* Die beiden Portraets sind ECHTE Fotos der beiden Gruender, nicht
+     KI-erzeugt. Sie gehoeren deshalb ausdruecklich NICHT in die Liste
+     `kiGeneriert` weiter unten. Zugeschnitten auf 4:5 und leicht
+     angeglichen, damit sie nebeneinander als Paar lesen — die Aufnahmen
+     stammen aus sehr verschiedenem Licht. */
+  portraitOussama: { src: '/team/oussama-allali.webp', w: 900, h: 1125 },
+  portraitSimo: { src: '/team/simo-kaddouri.webp', w: 900, h: 1125 },
+
   og: { src: '/og/og-default.webp', w: 1200, h: 630 },
 } as const satisfies Record<string, Img>
 

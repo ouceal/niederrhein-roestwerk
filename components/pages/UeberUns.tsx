@@ -3,14 +3,22 @@ import { getDictionary, type Locale } from '@/content/i18n'
 import { Figure } from '@/components/Figure'
 import { Shell, Section, Kicker, Prose } from '@/components/Shell'
 import { Newsletter } from '@/components/Newsletter'
+import { Team } from '@/components/Team'
 
 /*
  * HINWEIS ZUR GRÜNDERGESCHICHTE
- * Die Absätze im Wörterbuch sind bewusst allgemein gehalten und enthalten
- * keine erfundenen Biografie-Details (Namen, Jahreszahlen, Stationen).
- * Vor Launch durch die echte Geschichte ersetzen — in allen vier Sprachen —
- * und ein selbst fotografiertes Porträt einsetzen. Die Bilder in
- * kaffee/portraits/ gehören NICHT auf diese Seite.
+ * Die Absätze in `ueberUns.abschnitte` sind noch allgemein gehalten und
+ * enthalten keine erfundenen Biografie-Details. Vor Launch durch die
+ * echte Geschichte ersetzen — in allen vier Sprachen.
+ *
+ * Der Abschnitt <Team> darunter ist dagegen ECHT: zwei reale Personen,
+ * zwei eigene Fotos, und die Rollen stehen so da, wie sie genannt
+ * wurden. Nichts davon ist ausgeschmückt — keine Jahreszahlen, keine
+ * „Experten", keine Stationen, die niemand belegen kann. Wer dort etwas
+ * ergänzt, ergänzt bitte nur Nachprüfbares: es stehen echte Namen
+ * darunter.
+ *
+ * Die Bilder in kaffee/portraits/ gehören weiterhin NICHT auf diese Seite.
  */
 
 export function UeberUns({ lang }: { lang: Locale }) {
@@ -76,6 +84,8 @@ export function UeberUns({ lang }: { lang: Locale }) {
           </div>
         </Shell>
       </Section>
+
+      <Team lang={lang} />
 
       <Newsletter lang={lang} />
     </>

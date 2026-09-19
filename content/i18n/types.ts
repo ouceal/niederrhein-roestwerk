@@ -157,6 +157,19 @@ export type Dictionary = {
     fakten: readonly { readonly label: string; readonly wert: string }[]
   }
 
+  /**
+   * Die zwei Gruender.
+   *
+   * Namen stehen absichtlich NICHT im Woerterbuch — ein Name wird nicht
+   * uebersetzt. Er steht einmal in components/Team.tsx. Uebersetzt
+   * werden nur Rolle und Beschreibung.
+   */
+  team: {
+    kicker: string
+    titel: string
+    leute: readonly [Person, Person]
+  }
+
   kontakt: {
     kicker: string
     h1: string
@@ -240,6 +253,11 @@ export type KaffeeText = {
   readonly roestgrad: string
   readonly noten: readonly string[]
   readonly zubereitung: readonly string[]
+  readonly text: string
+}
+
+export type Person = {
+  readonly rolle: string
   readonly text: string
 }
 

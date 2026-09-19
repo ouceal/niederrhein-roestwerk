@@ -271,6 +271,21 @@ export const de: Dictionary = {
     ],
   },
 
+  team: {
+    kicker: 'Wer dahintersteht',
+    titel: 'Zwei, die sich die Strecke teilen',
+    leute: [
+      {
+        rolle: 'Vertrieb und Kunden in Europa',
+        text: 'Oussama kommt aus dem Vertrieb. Bei ihm liegt alles, was mit dem Verkauf in Europa zu tun hat: wer den Kaffee bekommt, zu welchen Bedingungen — und dass nur zugesagt wird, was auch eingehalten werden kann.',
+      },
+      {
+        rolle: 'Einkauf und Transport ab Äthiopien',
+        text: 'Simo hat vor dieser Rösterei Kaffee nach China eingeführt. Er kennt den Weg vom Ursprung bis zum Hafen und kümmert sich um Einkauf, Papiere und Transport — von Äthiopien bis nach Europa.',
+      },
+    ],
+  },
+
   kontakt: {
     kicker: 'Kontakt',
     h1: 'Schreib uns',
@@ -356,7 +371,8 @@ export const de: Dictionary = {
     bildnachweisTitel: 'Bildnachweis',
     bildnachweisKi:
       'Die Aufnahmen aus den Anbauländern auf dieser Website sind KI-generiert. Sie illustrieren die Herkunftsregion und zeigen keine bestimmte Farm, keinen bestimmten Betrieb und keine reale Person.',
-    bildnachweisRest: 'Alle übrigen Aufnahmen stammen aus lizenzierten Beständen.',
+    bildnachweisRest:
+      'Die Porträts auf der Seite „Über uns“ sind eigene Aufnahmen. Alle übrigen Aufnahmen stammen aus lizenzierten Beständen.',
   },
 
   datenschutz: {
@@ -443,6 +459,8 @@ export const de: Dictionary = {
     ernteBananen: 'Handernte von Kaffeekirschen zwischen Bananenstauden im Hochland',
     kirschenHaende: 'Haende eines Kaffeebauern mit frisch geernteten roten Kaffeekirschen',
     textur: 'Formatfuellende Textur aus geroesteten Kaffeebohnen',
+    portraitOussama: 'Porträt von Oussama Allali',
+    portraitSimo: 'Porträt von Simo Kaddouri',
     og: 'Vorschaubild fuer Social Media, WhatsApp und LinkedIn',
   },
   videoAlt: 'Geroestete Kaffeebohnen mit aufsteigendem Dampf',

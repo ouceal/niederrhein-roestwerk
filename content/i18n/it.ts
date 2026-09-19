@@ -274,6 +274,21 @@ export const it: Dictionary = {
     ],
   },
 
+  team: {
+    kicker: 'Chi c’è dietro',
+    titel: 'In due, lungo la stessa strada',
+    leute: [
+      {
+        rolle: 'Vendite e clienti in Europa',
+        text: 'Oussama viene dalle vendite. Tutto ciò che riguarda la vendita in Europa passa da lui: a chi va il caffè, a quali condizioni — e la regola di promettere solo ciò che si può mantenere.',
+      },
+      {
+        rolle: 'Acquisto e trasporto dall’Etiopia',
+        text: 'Prima di questa torrefazione Simo importava caffè in Cina. Conosce il percorso dall’origine al porto e si occupa di acquisto, documenti e trasporto — dall’Etiopia fino in Europa.',
+      },
+    ],
+  },
+
   kontakt: {
     kicker: 'Contatti',
     h1: 'Scrivici',
@@ -359,7 +374,8 @@ export const it: Dictionary = {
     bildnachweisTitel: 'Crediti fotografici',
     bildnachweisKi:
       'Le immagini delle regioni di coltivazione presenti su questo sito sono generate con intelligenza artificiale. Illustrano la regione d’origine e non mostrano nessuna azienda agricola particolare, nessuna impresa specifica e nessuna persona reale.',
-    bildnachweisRest: 'Tutte le altre immagini provengono da archivi su licenza.',
+    bildnachweisRest:
+      'I ritratti nella pagina «Chi siamo» sono fotografie nostre. Tutte le altre immagini provengono da archivi su licenza.',
   },
 
   datenschutz: {
@@ -445,6 +461,8 @@ export const it: Dictionary = {
     ernteBananen: 'Raccolta a mano di ciliegie di caffè tra piante di banano sugli altipiani',
     kirschenHaende: 'Le mani di un coltivatore con ciliegie di caffè rosse appena raccolte',
     textur: 'Texture a tutto campo di chicchi di caffè tostati',
+    portraitOussama: 'Ritratto di Oussama Allali',
+    portraitSimo: 'Ritratto di Simo Kaddouri',
     og: 'Immagine di anteprima per social media, WhatsApp e LinkedIn',
   },
   videoAlt: 'Chicchi di caffè tostati con vapore che sale',

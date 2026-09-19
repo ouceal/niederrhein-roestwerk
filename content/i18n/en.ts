@@ -274,6 +274,21 @@ export const en: Dictionary = {
     ],
   },
 
+  team: {
+    kicker: 'Who is behind it',
+    titel: 'Two people, one route between them',
+    leute: [
+      {
+        rolle: 'Sales and customers in Europe',
+        text: 'Oussama comes from sales. Everything to do with selling in Europe sits with him: who gets the coffee, on what terms — and making sure we only promise what we can keep.',
+      },
+      {
+        rolle: 'Buying and transport from Ethiopia',
+        text: 'Before this roastery, Simo imported coffee into China. He knows the way from origin to port and handles buying, paperwork and transport — from Ethiopia to Europe.',
+      },
+    ],
+  },
+
   kontakt: {
     kicker: 'Contact',
     h1: 'Write to us',
@@ -359,7 +374,8 @@ export const en: Dictionary = {
     bildnachweisTitel: 'Image credits',
     bildnachweisKi:
       'The images from the growing regions on this website are AI-generated. They illustrate the region of origin and show no particular farm, no particular business and no real person.',
-    bildnachweisRest: 'All other images come from licensed stock.',
+    bildnachweisRest:
+      'The portraits on the “About” page are our own photographs. All other images come from licensed stock.',
   },
 
   datenschutz: {
@@ -445,6 +461,8 @@ export const en: Dictionary = {
     ernteBananen: 'Hand picking of coffee cherries between banana plants in the highlands',
     kirschenHaende: 'The hands of a coffee farmer holding freshly picked red cherries',
     textur: 'A full-frame texture of roasted coffee beans',
+    portraitOussama: 'Portrait of Oussama Allali',
+    portraitSimo: 'Portrait of Simo Kaddouri',
     og: 'Preview image for social media, WhatsApp and LinkedIn',
   },
   videoAlt: 'Roasted coffee beans with steam rising',
