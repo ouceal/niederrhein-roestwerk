@@ -45,8 +45,22 @@ export function MobilMenu({ label, children }: { label: string; children: ReactN
       if (el.open && !el.contains(e.target as Node)) zu()
     }
 
+    // `relatedTarget === null` heisst NICHT „der Fokus ist draussen".
+    // Es heisst „der Fokus ist nirgends", und das ist auf dem iPhone der
+    // Normalfall: Safari gibt einem Link oder Knopf beim Antippen keinen
+    // Fokus, nur Formularfeldern. Der Fokus verliess also das <summary>
+    // und landete ins Leere — woraufhin dieses Menue sich schloss, noch
+    // bevor der Tipp beim Link ankam. Auf dem iPhone sah das so aus, als
+    // sei die Seite tot: Menue auf, Link antippen, nichts passiert.
+    // Chrome setzt den Fokus auf den Link und hat den Fehler nie gezeigt.
+    //
+    // Geschlossen wird deshalb nur, wenn der Fokus nachweislich woanders
+    // gelandet ist. Das ist genau der Fall, fuer den die Zeile gedacht
+    // war: mit Tab aus dem Menue heraus.
     const beiFokusweg = (e: FocusEvent) => {
-      if (el.open && !el.contains(e.relatedTarget as Node | null)) zu()
+      const ziel = e.relatedTarget as Node | null
+      if (!ziel) return
+      if (el.open && !el.contains(ziel)) zu()
     }
 
     // Wird der Schirm breit genug fuer die normale Kopfzeile, verschwindet
@@ -86,8 +100,18 @@ export function MobilMenu({ label, children }: { label: string; children: ReactN
         // war es ein Link, dann ist die Seite gewechselt, oder es war eine
         // Wahl, dann ist sie getroffen. In beiden Faellen hat das Menue
         // seine Aufgabe erfuellt.
+        //
+        // Das Zuklappen wartet aber einen Durchlauf ab. Hier stand
+        // vorher `open = false` mitten im Klick — also noch bevor der
+        // Browser die eigentliche Sache des Links erledigt hatte. WebKit
+        // laesst eine Navigation fallen, wenn der Link im Moment der
+        // Ausfuehrung nicht mehr dargestellt wird, und genau das
+        // passierte: das Panel klappte zu, der Link war weg, die Seite
+        // blieb stehen. Chrome fuehrt die Navigation trotzdem aus und
+        // hat davon nie etwas gezeigt.
         onClick={() => {
-          if (box.current) box.current.open = false
+          const el = box.current
+          if (el) setTimeout(() => { el.open = false }, 0)
         }}
       >
         {children}

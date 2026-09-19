@@ -91,8 +91,15 @@ export function ThemaWahl({
     const beiZeiger = (e: PointerEvent) => {
       if (el.open && !el.contains(e.target as Node)) zu()
     }
+    // null heisst „nirgends", nicht „draussen" — und auf dem iPhone ist
+    // das der Normalfall, weil Safari beim Antippen keinen Knopf
+    // fokussiert. Die Liste schloss sich dadurch, bevor der Tipp ankam;
+    // das Farbschema liess sich dort nie umstellen. Siehe
+    // components/MobilMenu.tsx.
     const beiFokusweg = (e: FocusEvent) => {
-      if (el.open && !el.contains(e.relatedTarget as Node | null)) zu()
+      const ziel = e.relatedTarget as Node | null
+      if (!ziel) return
+      if (el.open && !el.contains(ziel)) zu()
     }
     document.addEventListener('keydown', beiTaste)
     document.addEventListener('pointerdown', beiZeiger)

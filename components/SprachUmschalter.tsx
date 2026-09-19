@@ -80,8 +80,16 @@ export function SprachUmschalter({
     // Tab aus dem letzten Eintrag heraus schliesst ebenfalls. `relatedTarget`
     // ist das Element, das den Fokus bekommt — liegt es ausserhalb, ist die
     // Liste durch.
+    //
+    // Ist es null, ist der Fokus nirgends gelandet, und das ist etwas
+    // anderes als „draussen". Auf dem iPhone ist es der Normalfall:
+    // Safari fokussiert beim Antippen keine Links. Wer hier die Sprache
+    // antippte, schloss damit die Liste, bevor der Tipp ankam — die
+    // Sprache wechselte nie. Siehe components/MobilMenu.tsx.
     const beiFokusweg = (e: FocusEvent) => {
-      if (el.open && !el.contains(e.relatedTarget as Node | null)) zu()
+      const ziel = e.relatedTarget as Node | null
+      if (!ziel) return
+      if (el.open && !el.contains(ziel)) zu()
     }
 
     document.addEventListener('keydown', beiTaste)
@@ -160,8 +168,13 @@ export function SprachUmschalter({
           // Nach einem Klick ist die Wahl getroffen. Next wechselt die Seite
           // im Browser, ohne neu zu laden — ohne diese Zeile bliebe das
           // Panel auf der neuen Seite offen stehen.
+          //
+          // Einen Durchlauf spaeter, nicht sofort: WebKit laesst eine
+          // Navigation fallen, wenn der Link im Moment der Ausfuehrung
+          // nicht mehr dargestellt wird. Siehe components/MobilMenu.tsx.
           onClick={() => {
-            if (box.current) box.current.open = false
+            const el = box.current
+            if (el) setTimeout(() => { el.open = false }, 0)
           }}
         >
           {locales.map((l) => {
