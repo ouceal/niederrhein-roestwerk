@@ -6,17 +6,24 @@ import { video } from '@/content/images'
 const hero = video.heroLoop
 
 /**
- * Das einzige Stueck Client-JS auf der Seite — und nur, weil die Anforderung
- * ohne JS nicht erfuellbar ist: unter 768 px darf das Video gar nicht erst
- * geladen werden. Das `media`-Attribut auf <source> wird von Browsern in
- * <video> nicht ausgewertet (anders als in <picture>), CSS `display:none`
- * verhindert den Download nicht zuverlaessig.
+ * Das Video im Hero.
  *
- * Also: das Poster-Bild ist immer da und ist das LCP-Element. Das <video>
- * wird erst nach dem Mount eingehaengt, und nur wenn der Viewport >= 768 px
- * ist und der Nutzer keine reduzierte Bewegung angefordert hat.
+ * Es lief einmal erst ab 768 px, um auf dem Telefon Daten zu sparen. Das
+ * war gut gemeint und falsch herum gedacht: die meisten Besucher kommen
+ * mit dem Telefon, und genau dort blieb das Erste, was man von der Seite
+ * sieht, ein Standbild. Gespart wurden 856 KB — auf einer Seite, deren
+ * Fotos zusammen ein Vielfaches davon wiegen, und deren Hero die einzige
+ * Stelle ist, an der sich ueberhaupt etwas bewegt.
  *
- * Ohne JS bleibt das Poster stehen. Die Seite funktioniert vollstaendig.
+ * Jetzt laeuft es ueberall. Zwei Ausnahmen bleiben, und beide sind keine
+ * Vermutung ueber den Besucher, sondern eine Ansage von ihm:
+ *   - prefers-reduced-motion: wer Bewegung abbestellt hat, bekommt keine.
+ *   - Datensparmodus (Save-Data): wer dem Browser gesagt hat, dass sein
+ *     Datenvolumen knapp ist, bekommt das Standbild.
+ *
+ * Das Poster ist immer da und bleibt das LCP-Element; das <video> wird
+ * erst nach dem Mount eingehaengt und legt sich darueber. Ohne
+ * JavaScript bleibt das Poster stehen, und die Seite ist vollstaendig.
  */
 export function HeroVideo({
   objectPosition = 'center',
@@ -33,9 +40,12 @@ export function HeroVideo({
 
   useEffect(() => {
     if (typeof window.matchMedia !== 'function') return
-    const wideEnough = window.matchMedia('(min-width: 768px)').matches
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (wideEnough && !reducedMotion) setShowVideo(true)
+    // `connection` kennt nicht jeder Browser; fehlt es, wird nicht gespart.
+    const sparmodus = Boolean(
+      (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData
+    )
+    if (!reducedMotion && !sparmodus) setShowVideo(true)
   }, [])
 
   return (

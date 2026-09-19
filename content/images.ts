@@ -43,11 +43,19 @@ export const img = {
 
   /* Die beiden Portraets sind ECHTE Fotos der beiden Gruender, nicht
      KI-erzeugt. Sie gehoeren deshalb ausdruecklich NICHT in die Liste
-     `kiGeneriert` weiter unten. Zugeschnitten auf 4:5 und leicht
-     angeglichen, damit sie nebeneinander als Paar lesen — die Aufnahmen
-     stammen aus sehr verschiedenem Licht. */
-  portraitOussama: { src: '/team/oussama-allali.webp', w: 900, h: 1125 },
-  portraitSimo: { src: '/team/simo-kaddouri.webp', w: 900, h: 1125 },
+     `kiGeneriert` weiter unten.
+
+     Sie liegen bereits als 4:5 in der Datei. Die Bildflaeche im Team-
+     Abschnitt ist 4:5 mit object-cover, schneidet also ohnehin mittig
+     auf dieses Verhaeltnis — was CSS wegwirft, muss niemand laden. Aus
+     den zwei Telefonaufnahmen (721x1280 und 960x1280) wurden so je
+     720x900: derselbe sichtbare Ausschnitt, gut ein Drittel weniger
+     Bytes, und das Gesparte steckt in der Qualitaet.
+
+     720 px Breite, weil der Rahmen hoechstens 320 CSS-px breit wird —
+     auf einem Schirm mit doppelter Dichte also 640 echte Pixel. */
+  portraitOussama: { src: '/team/oussama-allali.webp', w: 720, h: 900 },
+  portraitSimo: { src: '/team/simo-kaddouri.webp', w: 720, h: 900 },
 
   og: { src: '/og/og-default.webp', w: 1200, h: 630 },
 } as const satisfies Record<string, Img>
