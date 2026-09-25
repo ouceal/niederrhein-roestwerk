@@ -3,8 +3,10 @@ import { notFound } from 'next/navigation'
 import { fraunces, inter } from '@/lib/fonts'
 import { site, vorLivegang } from '@/content/site'
 import { img } from '@/content/images'
-import { getDictionary, locales, localeNames, isLocale, type Locale } from '@/content/i18n'
+import { getDictionary, locales, localeNames, isLocale, path, type Locale } from '@/content/i18n'
 import { ThemaSkript } from '@/components/ThemaSkript'
+import { BestellungProvider } from '@/components/shop/Bestellung'
+import { BestellLeiste } from '@/components/shop/BestellLeiste'
 import '../globals.css'
 
 /**
@@ -126,7 +128,19 @@ export default function LangLayout({
         >
           {d.nav.zumInhalt}
         </a>
-        {children}
+        {/* Die Bestellung haengt hier, ueber allen Seiten einer Sprache:
+            Next wechselt die Seite ohne Neuladen, das Layout bleibt
+            stehen — und mit ihm die Liste. */}
+        <BestellungProvider>
+          {children}
+          <BestellLeiste
+            lang={lang}
+            t={d.shop}
+            namen={[d.kaffees[0].name, d.kaffees[1].name]}
+            shopHref={`${path(lang, 'kaffee')}#shop`}
+            versandHref={path(lang, 'versand')}
+          />
+        </BestellungProvider>
       </body>
     </html>
   )

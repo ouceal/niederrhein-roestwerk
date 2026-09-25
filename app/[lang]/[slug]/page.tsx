@@ -17,6 +17,7 @@ import { Kaffee } from '@/components/pages/Kaffee'
 import { Roesterei } from '@/components/pages/Roesterei'
 import { UeberUns } from '@/components/pages/UeberUns'
 import { Kontakt } from '@/components/pages/Kontakt'
+import { Versand } from '@/components/pages/Versand'
 import { Danke } from '@/components/pages/Danke'
 import { Impressum } from '@/components/pages/Impressum'
 import { Datenschutz } from '@/components/pages/Datenschutz'
@@ -32,7 +33,7 @@ import { NichtGefunden } from '@/components/pages/NichtGefunden'
  * entsteht daraus fuer jede Kombination eine fertige HTML-Datei — es ist
  * also nichts dynamisch, es sieht nur im Quelltext so aus.
  *
- * 4 Sprachen x 7 Unterseiten = 28 Seiten, plus 4 Startseiten.
+ * 4 Sprachen x 9 Unterseiten = 36 Seiten, plus 4 Startseiten.
  */
 
 export function generateStaticParams() {
@@ -66,6 +67,7 @@ export async function generateMetadata({
     roesterei: d.meta.roestereiTitle,
     ueberUns: d.meta.ueberUnsTitle,
     kontakt: d.meta.kontaktTitle,
+    versand: d.meta.versandTitle,
     danke: d.meta.dankeTitle,
     impressum: d.meta.impressumTitle,
     datenschutz: d.meta.datenschutzTitle,
@@ -76,6 +78,7 @@ export async function generateMetadata({
     roesterei: d.meta.roestereiDescription,
     ueberUns: d.meta.ueberUnsDescription,
     kontakt: d.meta.kontaktDescription,
+    versand: d.meta.versandDescription,
     danke: d.meta.dankeDescription,
     impressum: d.meta.impressumDescription,
     datenschutz: d.meta.datenschutzDescription,
@@ -99,6 +102,7 @@ export default function SlugPage({ params }: { params: { lang: string; slug: str
     roesterei: <Roesterei lang={lang} />,
     ueberUns: <UeberUns lang={lang} />,
     kontakt: <Kontakt lang={lang} />,
+    versand: <Versand lang={lang} />,
     danke: <Danke lang={lang} />,
     impressum: <Impressum lang={lang} />,
     datenschutz: <Datenschutz lang={lang} />,

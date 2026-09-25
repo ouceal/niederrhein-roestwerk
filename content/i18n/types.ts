@@ -1,4 +1,5 @@
 import type { ImgKey } from '../images'
+import type { Mahlgrad } from '../shop'
 
 /**
  * Die Form eines Woerterbuchs.
@@ -36,6 +37,8 @@ export type Dictionary = {
     impressumDescription: string
     datenschutzTitle: string
     datenschutzDescription: string
+    versandTitle: string
+    versandDescription: string
   }
 
   /**
@@ -57,6 +60,8 @@ export type Dictionary = {
     roesterei: string
     ueberUns: string
     kontakt: string
+    /** Beschriftung des Warenkorb-Knopfs in der Kopfzeile */
+    bestellung: string
     /** aria-label der Hauptnavigation */
     ariaHaupt: string
     ariaSeiten: string
@@ -81,6 +86,7 @@ export type Dictionary = {
     spalteKontakt: string
     impressum: string
     datenschutz: string
+    versand: string
     cookieZeile: string
   }
 
@@ -132,6 +138,8 @@ export type Dictionary = {
     roestgrad: string
     noten: string
     zubereitung: string
+    /** LMIV: Bezeichnung, Ursprung, Lebensmittelunternehmer */
+    pflicht: string
   }
 
   kaffees: readonly [KaffeeText, KaffeeText]
@@ -183,6 +191,35 @@ export type Dictionary = {
     einwilligung: Zwei
     datenschutzLink: string
     absenden: string
+  }
+
+  /**
+   * Alles rund ums Bestellen. Keine Funktionen, nur Text: die Kaufknoepfe
+   * sind Client-Komponenten und bekommen dieses Objekt als Prop — und
+   * was vom Server zum Client geht, muss serialisierbar sein.
+   * `{n}` und `{betrag}` werden im Code ersetzt.
+   */
+  shop: Shop
+
+  versandSeite: {
+    kicker: string
+    h1: string
+    intro: string
+    schritteTitel: string
+    schritte: readonly [Absatz, Absatz, Absatz]
+    preiseTitel: string
+    spalteGroesse: string
+    spaltePreis: string
+    spalteGrundpreis: string
+    versandTitel: string
+    /** {kosten} und {frei} werden ersetzt */
+    versandText: string
+    lieferzeitTitel: string
+    lieferzeitText: string
+    zahlungTitel: string
+    zahlungText: string
+    todoTitel: string
+    todoPunkte: readonly string[]
   }
 
   newsletter: {
@@ -254,6 +291,59 @@ export type KaffeeText = {
   readonly noten: readonly string[]
   readonly zubereitung: readonly string[]
   readonly text: string
+}
+
+export type Absatz = { readonly title: string; readonly text: string }
+
+export type Shop = {
+  readonly abschnittKicker: string
+  readonly groesse: string
+  readonly mahlgrad: string
+  readonly mahlgrade: Readonly<Record<Mahlgrad, string>>
+  readonly menge: string
+  readonly weniger: string
+  readonly mehr: string
+  readonly jeKg: string
+  /** „Endpreis, zzgl. " + Link „Versand" + "" */
+  readonly preisHinweis: Zwei
+  readonly versandLink: string
+  readonly hinzufuegen: string
+  readonly hinzugefuegt: string
+  readonly direkt: string
+  /** LMIV-Kurzangabe unter jedem Kaffee */
+  readonly pflichtWert: string
+
+  readonly bestellung: string
+  readonly oeffnen: string
+  readonly schliessen: string
+  readonly leer: string
+  readonly artikelEins: string
+  readonly artikelViele: string
+  readonly entfernen: string
+  readonly zwischensumme: string
+  readonly versandkosten: string
+  readonly kostenlos: string
+  readonly gesamt: string
+  readonly freiNoch: string
+  readonly freiErreicht: string
+  readonly sendenWhatsapp: string
+  readonly sendenEmail: string
+  readonly ablauf: string
+
+  readonly nachrichtGruss: string
+  readonly nachrichtFelder: string
+  readonly nachrichtBetreff: string
+
+  readonly gross: {
+    readonly kicker: string
+    readonly titel: string
+    readonly text: string
+    readonly punkte: readonly [string, string, string]
+    readonly whatsapp: string
+    readonly email: string
+    readonly nachricht: string
+    readonly betreff: string
+  }
 }
 
 export type Person = {

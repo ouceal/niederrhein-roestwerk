@@ -6,10 +6,12 @@
  *  !! VOR DEM ERSTEN VERKAUF ZWINGEND ERGAENZEN !!
  * ----------------------------------------------------------------------------
  *
- *  Diese Website ist eine reine Marketing- und Pre-Launch-Seite.
- *  Es gibt keinen Warenkorb, keine Preise, keine Bestellmoeglichkeit.
- *  Sobald auch nur EIN Produkt verkaufbar wird, ist Folgendes Pflicht —
- *  ohne diese Punkte ist der Shop abmahnfaehig:
+ *  Die Seite verkauft: zwei Kaffees in 250 g / 500 g / 1 kg, Preise und
+ *  Versand in content/shop.ts. Bestellt wird per vorausgefuellter
+ *  WhatsApp- oder E-Mail-Nachricht, der Vertrag kommt erst mit unserer
+ *  Bestaetigung zustande. Punkt 1 und 5 sind damit umgesetzt (Grundpreis
+ *  je kg, Seite „Bestellung & Versand"). Der Rest ist VOR DEM LIVEGANG
+ *  Pflicht — ohne diese Punkte ist der Shop abmahnfaehig:
  *
  *   1. PREISANGABENVERORDNUNG (PAngV)
  *      Gesamtpreis inkl. USt UND Grundpreis je 100 g bei jedem Kaffee,
@@ -35,6 +37,10 @@
  *      ("2-4 Werktage"), nicht "in der Regel schnell".
  *
  *   6. BUTTON-LOESUNG (§ 312j Abs. 3 BGB)
+ *      Greift erst bei einer Bestellung, die AUF DER SEITE verbindlich
+ *      abgeschlossen wird. Solange die Seite nur eine Nachricht vorbereitet
+ *      und wir bestaetigen, ist das eine Anfrage — mit einem echten
+ *      Checkout gilt dann: 
  *      Der Bestellbutton muss exakt "Zahlungspflichtig bestellen" heissen
  *      (oder eine ebenso eindeutige Formulierung). Nicht "Absenden",
  *      nicht "Weiter", nicht "Jetzt kaufen" als Alleinbeschriftung.
@@ -85,12 +91,14 @@ export const site = {
   city: 'Willich',
   region: 'Nordrhein-Westfalen',
   description:
-    'Kleine Kaffeerösterei in Willich. Ein Ursprung, zwei Kaffees, Röstung in kleinen Chargen. Der Verkauf startet noch nicht — trag dich in die Warteliste ein.',
+    'Kleine Kaffeerösterei in Willich. Ein Ursprung, zwei Kaffees, frisch geröstet in kleinen Chargen. Jetzt bestellen: 250 g, 500 g oder 1 kg.',
 
   /* TODO vor Launch: echte Kontaktdaten eintragen. Nichts hier erfinden. */
   contact: {
     email: 'TODO@niederrhein-roestwerk.de',
-    phone: 'TODO: +49 …',
+    /* Dieselbe Nummer nimmt die Bestellungen per WhatsApp an,
+       siehe content/shop.ts → bestellKanal. */
+    phone: '+49 1521 6629522',
   },
 
   /* TODO vor Launch: Startdatum eintragen, sobald es feststeht.

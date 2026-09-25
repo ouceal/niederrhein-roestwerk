@@ -4,7 +4,11 @@ import { Shell, Section } from './Shell'
 import { Submit } from './Button'
 
 /**
- * Warteliste — Double-Opt-In.
+ * Roestpost (Newsletter) — Double-Opt-In.
+ *
+ * Die Formularnamen heissen weiter `warteliste-*`: so hiessen sie vor dem
+ * Shop, und ein neuer Name waere fuer Netlify ein neues Formular mit
+ * leerer Liste.
  *
  * Wichtig und nicht wegzukuerzen:
  *  - die Einwilligungs-Checkbox ist `required` und NICHT vorausgewaehlt
@@ -27,7 +31,7 @@ export function Newsletter({ lang }: { lang: Locale }) {
   const formName = `warteliste-${lang}`
 
   return (
-    <Section id="warteliste" tone="deep">
+    <Section id="newsletter" tone="deep">
       <Shell>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
           <div>

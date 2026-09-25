@@ -10,10 +10,10 @@ export const de: Dictionary = {
     siteTitle: 'Niederrhein Röstwerk',
     homeTitle: 'Kaffeerösterei in Willich',
     homeDescription:
-      'Kleine Kaffeerösterei in Willich. Ein Ursprung, zwei Kaffees, Röstung in kleinen Chargen. Der Verkauf startet noch nicht — trag dich in die Warteliste ein.',
+      'Kleine Kaffeerösterei in Willich. Ein Ursprung, zwei Kaffees, frisch geröstet in kleinen Chargen. Jetzt bestellen: 250 g, 500 g oder 1 kg.',
     kaffeeTitle: 'Kaffee',
     kaffeeDescription:
-      'Zwei Kaffees aus Sidamo, Äthiopien: ein helles Filterprofil und ein mittleres Espressoprofil. Noch nicht bestellbar.',
+      'Zwei Kaffees aus Sidamo, Äthiopien: hell für den Filter, mittel für die Maschine. In 250 g, 500 g und 1 kg — bestellt per WhatsApp oder E-Mail.',
     roestereiTitle: 'Rösterei',
     roestereiDescription:
       'Vom Rohkaffee über die Trommelröstung und das Cupping bis zur Verpackung: wie im Röstwerk gearbeitet wird.',
@@ -30,6 +30,9 @@ export const de: Dictionary = {
     datenschutzTitle: 'Datenschutz',
     datenschutzDescription:
       'Informationen zur Verarbeitung personenbezogener Daten nach Art. 13 DSGVO.',
+    versandTitle: 'Bestellung & Versand',
+    versandDescription:
+      'So bestellst du beim Niederrhein Röstwerk: Preise, Grundpreise, Versandkosten, Lieferzeit und Zahlung.',
   },
 
   thema: {
@@ -44,6 +47,7 @@ export const de: Dictionary = {
     roesterei: 'Rösterei',
     ueberUns: 'Über uns',
     kontakt: 'Kontakt',
+    bestellung: 'Bestellung',
     ariaHaupt: 'Hauptnavigation',
     ariaSeiten: 'Seiten',
     ariaRecht: 'Rechtliches',
@@ -60,14 +64,15 @@ export const de: Dictionary = {
     spalteKontakt: 'Kontakt',
     impressum: 'Impressum',
     datenschutz: 'Datenschutz',
+    versand: 'Bestellung & Versand',
     cookieZeile: 'Diese Seite setzt keine Cookies und bindet keine externen Dienste ein.',
   },
 
   hero: {
     kicker: 'Willich, Niederrhein',
     headline: 'Kaffee aus Sidamo, in Willich geröstet.',
-    sub: 'Ein Ursprung. Zwei Kaffees. Röstung in kleinen Chargen. Der Verkauf hat noch nicht begonnen.',
-    cta: 'Zur Warteliste',
+    sub: 'Ein Ursprung. Zwei Kaffees. Frisch geröstet in kleinen Chargen — in 250 g, 500 g und 1 kg.',
+    cta: 'Kaffee bestellen',
   },
 
   home: {
@@ -97,7 +102,7 @@ export const de: Dictionary = {
         title: 'Warum kleine Mengen',
         paragraphs: [
           'Kaffee ist ein Lebensmittel mit kurzer bester Zeit. Zwei bis vier Wochen nach der Röstung ist er auf dem Punkt, danach flacht er ab. Wer auf Vorrat röstet, verkauft alten Kaffee.',
-          'Deshalb röstet das Röstwerk nach Bedarf. Das begrenzt die Menge, die wir anbieten können — und es ist der Grund, warum es eine Warteliste gibt statt eines offenen Shops.',
+          'Deshalb röstet das Röstwerk nach Bedarf, in kleinen Chargen. Auf jeder Tüte steht das Röstdatum — du siehst also selbst, wie frisch dein Kaffee ist.',
         ],
       },
     ],
@@ -123,25 +128,25 @@ export const de: Dictionary = {
     ],
     sortimentKicker: 'Das Sortiment',
     sortimentTitel: 'Zwei Kaffees',
-    sortimentText: 'Beide aus Sidamo, beide in kleinen Chargen geröstet. Noch nicht bestellbar.',
-    sortimentCta: 'Beide Kaffees im Detail',
+    sortimentText: 'Beide aus Sidamo, beide in kleinen Chargen geröstet. Größe und Mahlgrad wählen, in die Bestellung legen, per WhatsApp oder E-Mail abschicken.',
+    sortimentCta: 'Alles zu beiden Kaffees',
   },
 
   kaffee: {
-    kicker: 'Sortiment',
+    kicker: 'Shop',
     h1: 'Zwei Kaffees, ein Ursprung',
     intro: [
       'Beide Kaffees kommen aus der Region Sidamo im Süden Äthiopiens. Der Unterschied liegt in der Röstung, nicht im Marketing: einmal hell für den Filter, einmal etwas dunkler für die Maschine.',
-      'Verkauft wird noch nicht. Sobald es losgeht, stehen hier Preis, Grundpreis je 100 g, Füllmenge und alle Pflichtangaben zum Lebensmittel.',
+      'Größe und Mahlgrad wählen, in die Bestellung legen und per WhatsApp oder E-Mail abschicken. Wir bestätigen Röstdatum, Gesamtbetrag und Zahlung — dann geht die Tüte raus.',
     ],
     srUeberschrift: 'Die Kaffees im Detail',
     blockA: {
-      titel: 'Was auf der Tüte stehen wird',
+      titel: 'Was auf der Tüte steht',
       text: 'Röstdatum statt nur Mindesthaltbarkeitsdatum. Herkunftsregion, Aufbereitung und Röstgrad. Füllmenge und Grundpreis. Keine Auszeichnungen, die wir nicht haben, keine Bio-Auslobung ohne Zertifizierung.',
     },
     blockB: {
-      titel: 'Wie viel es geben wird',
-      text: 'Das hängt an der Röstkapazität und daran, wie viel Rohkaffee wir pro Charge einkaufen. Genaue Mengen nennen wir erst, wenn sie feststehen.',
+      titel: 'Frisch statt auf Vorrat',
+      text: 'Geröstet wird in kleinen Chargen. Ist eine gerade vergriffen, sagen wir dir bei der Bestätigung, wann die nächste aus der Trommel kommt — statt dir alten Kaffee zu schicken.',
     },
   },
 
@@ -152,6 +157,7 @@ export const de: Dictionary = {
     roestgrad: 'Röstgrad',
     noten: 'Notizen',
     zubereitung: 'Zubereitung',
+    pflicht: 'Angaben',
   },
 
   kaffees: [
@@ -259,7 +265,7 @@ export const de: Dictionary = {
         titel: 'Warum kleine Chargen',
         absaetze: [
           'Gerösteter Kaffee hat ein Fenster von etwa zwei bis sechs Wochen. Wer groß röstet, muss lagern, und wer lagert, verkauft Kaffee außerhalb dieses Fensters.',
-          'Kleine Chargen lösen das, kosten aber Menge. Deshalb gibt es erst eine Warteliste und dann einen Shop — nicht umgekehrt.',
+          'Kleine Chargen lösen das, kosten aber Menge. Deshalb rösten wir lieber öfter und weniger — und schreiben das Röstdatum auf jede Tüte.',
         ],
       },
     ],
@@ -267,7 +273,7 @@ export const de: Dictionary = {
       { label: 'Ort', wert: 'Willich, Nordrhein-Westfalen' },
       { label: 'Ursprung', wert: 'Sidamo, Äthiopien' },
       { label: 'Röster', wert: 'Trommel' },
-      { label: 'Status', wert: 'Vor dem Start' },
+      { label: 'Bestellen', wert: 'Per WhatsApp oder E-Mail' },
     ],
   },
 
@@ -307,14 +313,113 @@ export const de: Dictionary = {
     absenden: 'Nachricht senden',
   },
 
+  shop: {
+    abschnittKicker: 'Bestellen',
+    groesse: 'Größe',
+    mahlgrad: 'Mahlgrad',
+    mahlgrade: {
+      bohne: 'Ganze Bohne',
+      filter: 'Gemahlen für Filter',
+      siebtraeger: 'Gemahlen für Siebträger',
+    },
+    menge: 'Menge',
+    weniger: 'Eine Tüte weniger',
+    mehr: 'Eine Tüte mehr',
+    jeKg: '{betrag} / kg',
+    preisHinweis: ['Endpreis, zzgl. ', ''],
+    versandLink: 'Versand',
+    hinzufuegen: 'In die Bestellung',
+    hinzugefuegt: 'Liegt in der Bestellung',
+    direkt: 'Nur diesen direkt per WhatsApp bestellen',
+    pflichtWert: 'Röstkaffee, 100 % Arabica. Ursprungsland Äthiopien. Hersteller und Anschrift siehe Impressum.',
+
+    bestellung: 'Deine Bestellung',
+    oeffnen: 'Bestellung ansehen',
+    schliessen: 'Schließen',
+    leer: 'Noch nichts ausgewählt. Such dir im Shop einen Kaffee aus.',
+    artikelEins: '1 Tüte',
+    artikelViele: '{n} Tüten',
+    entfernen: 'Entfernen',
+    zwischensumme: 'Zwischensumme',
+    versandkosten: 'Versand',
+    kostenlos: 'kostenlos',
+    gesamt: 'Gesamt',
+    freiNoch: 'Noch {betrag} bis zum kostenlosen Versand.',
+    freiErreicht: 'Der Versand ist kostenlos.',
+    sendenWhatsapp: 'Per WhatsApp senden',
+    sendenEmail: 'Per E-Mail senden',
+    ablauf:
+      'Deine Bestellung geht als Nachricht an uns. Wir bestätigen Röstdatum, Gesamtbetrag und Zahlung — erst mit unserer Bestätigung ist sie verbindlich.',
+
+    nachrichtGruss: 'Hallo Niederrhein Röstwerk, ich möchte bestellen:',
+    nachrichtFelder: 'Name:\nLieferadresse:',
+    nachrichtBetreff: 'Bestellung',
+
+    gross: {
+      kicker: 'Größere Mengen',
+      titel: 'Mehr als 1 kg? Gern.',
+      text: 'Für 5 kg, 10 kg oder regelmäßige Lieferungen an Café oder Büro schreib uns kurz, was du brauchst. Du bekommst ein Angebot mit Preis je Kilo und einem Röstplan.',
+      punkte: ['5 kg, 10 kg und mehr', 'Für Cafés, Büros und Restaurants', 'Einmalig oder regelmäßig'],
+      whatsapp: 'Per WhatsApp anfragen',
+      email: 'Per E-Mail anfragen',
+      nachricht:
+        'Hallo Niederrhein Röstwerk, ich interessiere mich für eine größere Menge Kaffee.\n\nKaffee (Filter / Espresso):\nMenge:\nEinmalig oder regelmäßig:\nName / Firma:\nOrt:',
+      betreff: 'Anfrage: größere Menge',
+    },
+  },
+
+  versandSeite: {
+    kicker: 'Bestellen',
+    h1: 'So bestellst du',
+    intro:
+      'Kein Konto, kein Checkout, keine Cookies. Du stellst deine Bestellung zusammen, schickst sie uns als Nachricht — und wir melden uns persönlich.',
+    schritteTitel: 'In drei Schritten',
+    schritte: [
+      {
+        title: 'Auswählen',
+        text: 'Kaffee, Größe und Mahlgrad wählen und in die Bestellung legen: 250 g, 500 g oder 1 kg.',
+      },
+      {
+        title: 'Senden',
+        text: 'Die Bestellung geht als fertige Nachricht an uns, per WhatsApp oder E-Mail. Name und Lieferadresse trägst du dort ein.',
+      },
+      {
+        title: 'Bestätigen',
+        text: 'Wir antworten mit Gesamtbetrag, Röstdatum und Zahlungsdaten. Dann wird geröstet, verpackt und verschickt.',
+      },
+    ],
+    preiseTitel: 'Preise',
+    spalteGroesse: 'Größe',
+    spaltePreis: 'Preis',
+    spalteGrundpreis: 'Grundpreis',
+    versandTitel: 'Versand',
+    versandText:
+      'Versand innerhalb Deutschlands: {kosten}. Ab {frei} Bestellwert ist der Versand kostenlos. Alle Preise sind Endpreise.',
+    lieferzeitTitel: 'Lieferzeit',
+    lieferzeitText:
+      'In der Regel 2–4 Werktage nach Zahlungseingang. Ist eine Charge gerade vergriffen, sagen wir dir vorher, wann die nächste fertig ist.',
+    zahlungTitel: 'Zahlung',
+    zahlungText:
+      'Du zahlst erst, wenn wir deine Bestellung bestätigt haben. Die Zahlungsdaten stehen in unserer Antwort.',
+    todoTitel: 'Vor dem Livegang',
+    todoPunkte: [
+      'AGB und Widerrufsbelehrung mit Muster-Widerrufsformular erstellen lassen und hier sowie im Footer verlinken.',
+      'Zahlungsarten festlegen und hier nennen.',
+      'Lieferzeit bestätigen.',
+      'LMIV-Pflichtangaben je Kaffee prüfen lassen: Bezeichnung, Nettofüllmenge, Name und Anschrift des Lebensmittelunternehmers.',
+      'Kaffeesteuer beim Hauptzollamt anmelden, Verpackungen bei LUCID registrieren.',
+      'Versand ins Ausland: Kosten festlegen oder ausdrücklich ausschließen.',
+    ],
+  },
+
   newsletter: {
-    titel: 'Warteliste',
-    text: 'Eine E-Mail, wenn der Verkauf startet. Danach höchstens eine im Monat: was in der Trommel war, was es gibt. Abmelden mit einem Klick, der Link steht in jeder E-Mail.',
+    titel: 'Röstpost',
+    text: 'Höchstens eine E-Mail im Monat: was in der Trommel war, was neu dazukommt, wann eine Charge knapp wird. Abmelden mit einem Klick, der Link steht in jeder E-Mail.',
     labelEmail: 'E-Mail-Adresse',
     platzhalter: 'name@beispiel.de',
     absenden: 'Eintragen',
     einwilligung: [
-      'Ich möchte die Warteliste per E-Mail erhalten. Zur Bestätigung schickt das Röstwerk eine E-Mail mit einem Link — erst danach ist die Anmeldung aktiv. Ich kann die Einwilligung jederzeit widerrufen. Hinweise zur Verarbeitung: ',
+      'Ich möchte die Röstpost per E-Mail erhalten. Zur Bestätigung schickt das Röstwerk eine E-Mail mit einem Link — erst danach ist die Anmeldung aktiv. Ich kann die Einwilligung jederzeit widerrufen. Hinweise zur Verarbeitung: ',
       '.',
     ],
     datenschutzLink: 'Datenschutzerklärung',
@@ -324,7 +429,7 @@ export const de: Dictionary = {
   danke: {
     h1: 'Angekommen.',
     absaetze: [
-      'Wenn du dich für die Warteliste eingetragen hast: In den nächsten Minuten kommt eine E-Mail mit einem Bestätigungslink. Erst nach dem Klick bist du eingetragen — ohne Klick passiert nichts.',
+      'Wenn du dich für die Röstpost eingetragen hast: In den nächsten Minuten kommt eine E-Mail mit einem Bestätigungslink. Erst nach dem Klick bist du eingetragen — ohne Klick passiert nichts.',
       'Bei einer Nachricht über das Kontaktformular melden wir uns in der Regel innerhalb von zwei Werktagen.',
     ],
     zurueck: 'Zurück zur Startseite',
@@ -405,30 +510,39 @@ export const de: Dictionary = {
         ],
       },
       {
-        titel: '4. Warteliste und Newsletter (Double-Opt-In)',
+        titel: '4. Newsletter „Röstpost“ (Double-Opt-In)',
         absaetze: [
-          'Für die Warteliste wird die E-Mail-Adresse erhoben. Die Anmeldung läuft im Double-Opt-In-Verfahren: Nach dem Absenden des Formulars wird eine E-Mail mit einem Bestätigungslink verschickt. Erst mit dem Klick auf diesen Link ist die Anmeldung wirksam. Ohne Bestätigung wird die Adresse nicht in den Verteiler aufgenommen.',
+          'Für die Röstpost wird die E-Mail-Adresse erhoben. Die Anmeldung läuft im Double-Opt-In-Verfahren: Nach dem Absenden des Formulars wird eine E-Mail mit einem Bestätigungslink verschickt. Erst mit dem Klick auf diesen Link ist die Anmeldung wirksam. Ohne Bestätigung wird die Adresse nicht in den Verteiler aufgenommen.',
           'Zum Nachweis der Einwilligung werden der Zeitpunkt der Anmeldung, der Zeitpunkt der Bestätigung und die dabei verwendete IP-Adresse gespeichert.',
           'Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO. Die Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden — über den Abmeldelink in jeder E-Mail oder formlos an die oben genannte Adresse.',
           { text: '', todo: 'Newsletter-Dienstleister benennen und Auftragsverarbeitungsvertrag schließen' },
         ],
       },
       {
-        titel: '5. Cookies und Tracking',
+        titel: '5. Bestellungen per WhatsApp und E-Mail',
+        absaetze: [
+          'Bestellungen laufen nicht über ein Formular dieser Website. Der Bestellknopf öffnet WhatsApp oder dein E-Mail-Programm mit einer vorausgefüllten Nachricht. Gesendet wird erst, wenn du selbst auf Senden tippst.',
+          'Deine Bestellliste liegt bis dahin nur im Speicher deines eigenen Browsers (localStorage), damit sie beim Seitenwechsel nicht verloren geht. Sie wird nicht an uns übertragen und verschwindet, sobald du sie leerst. Das ist kein Cookie und dient allein der Funktion, die du selbst nutzt (§ 25 Abs. 2 Nr. 2 TDDDG).',
+          'Name, Lieferadresse, Kontaktdaten und Bestellinhalt verarbeiten wir zur Abwicklung der Bestellung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO. Rechnungsdaten bewahren wir nach den steuerrechtlichen Fristen auf.',
+          { text: 'Bei WhatsApp ist die WhatsApp Ireland Ltd. beteiligt; dabei können Metadaten auch in die USA übermittelt werden. Wer das nicht möchte, bestellt per E-Mail. ', todo: 'Nutzung von WhatsApp Business, Speicherdauer und Aufbewahrungsfristen prüfen lassen' },
+        ],
+      },
+      {
+        titel: '6. Cookies und Tracking',
         absaetze: [
           'Diese Website setzt keine Cookies. Es findet keine Reichweitenmessung statt, es ist kein Analyse- oder Werbedienst eingebunden, und es werden keine externen Schriftarten, Karten, Videoplattformen oder Chat-Widgets geladen. Die verwendeten Schriften liegen auf demselben Server wie die Website.',
           'Deshalb gibt es auch kein Cookie-Banner. Sobald ein Dienst hinzukommt, der Cookies setzt oder auf Endgeräte-Informationen zugreift, ist vorher eine Einwilligung nach § 25 TDDDG einzuholen.',
         ],
       },
       {
-        titel: '6. Ihre Rechte',
+        titel: '7. Ihre Rechte',
         absaetze: [
           'Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Eine erteilte Einwilligung können Sie jederzeit für die Zukunft widerrufen.',
           'Außerdem steht Ihnen ein Beschwerderecht bei einer Aufsichtsbehörde zu. Zuständig ist in der Regel die Behörde Ihres Wohnsitzlandes; für Nordrhein-Westfalen die Landesbeauftragte für Datenschutz und Informationsfreiheit NRW.',
         ],
       },
       {
-        titel: '7. Stand',
+        titel: '8. Stand',
         absaetze: [{ text: '', todo: 'Datum der letzten Aktualisierung eintragen' }],
       },
     ],

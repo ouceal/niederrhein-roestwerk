@@ -1,7 +1,8 @@
 import { img, type Img } from '@/content/images'
-import { getDictionary, type Locale } from '@/content/i18n'
+import { getDictionary, path, type Locale } from '@/content/i18n'
 import type { KaffeeText } from '@/content/i18n/types'
 import { Figure } from './Figure'
+import { Kaufbox } from './shop/Kaufbox'
 
 /**
  * Welches Bild zu welchem Kaffee gehoert, haengt nicht an der Sprache —
@@ -12,9 +13,9 @@ const bildAlt = ['aeropress', 'espressoSiebtraeger'] as const
 
 /**
  * Kaffee-Darstellung. Bewusst keine Karte mit Schlagschatten —
- * nur Bild, Linie, Text. Und bewusst KEIN Preis: es gibt noch nichts
- * zu kaufen, und ein Preis ohne Grundpreis je 100 g waere ohnehin
- * ein Verstoss gegen die PAngV (siehe content/site.ts).
+ * nur Bild, Linie, Text. Darunter der Kaufbereich: Groesse, Mahlgrad,
+ * Menge, Preis mit Grundpreis je kg (PAngV) und der Knopf in die
+ * Bestellung. Die Zahlen dazu stehen in content/shop.ts.
  */
 export function CoffeeCard({
   lang,
@@ -28,7 +29,11 @@ export function CoffeeCard({
   const f = d.kaffeeFelder
 
   return (
-    <article>
+    // Spalte ueber die volle Hoehe der Grid-Zelle, der Kaufbereich sitzt
+    // mit mt-auto unten. So stehen „Bestellen" in beiden Karten auf
+    // derselben Linie, auch wenn Text und Datenzeilen ueber ihnen
+    // verschieden lang sind — in jeder der vier Sprachen anders.
+    <article className="flex h-full flex-col">
       <Figure
         image={bilder[index]}
         alt={d.alt[bildAlt[index]]}
@@ -50,7 +55,18 @@ export function CoffeeCard({
         <Row label={f.roestgrad} value={kaffee.roestgrad} />
         <Row label={f.noten} value={kaffee.noten.join(' · ')} />
         <Row label={f.zubereitung} value={kaffee.zubereitung.join(' · ')} />
+        <Row label={f.pflicht} value={d.shop.pflichtWert} />
       </dl>
+
+      <div className="mt-auto pt-10">
+      <Kaufbox
+        lang={lang}
+        kaffee={index}
+        namen={[d.kaffees[0].name, d.kaffees[1].name]}
+        t={d.shop}
+        versandHref={path(lang, 'versand')}
+      />
+      </div>
     </article>
   )
 }

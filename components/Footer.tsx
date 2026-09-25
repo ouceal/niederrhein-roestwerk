@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { site, studio } from '@/content/site'
+import { bestellKanal } from '@/content/shop'
 import { getDictionary, path, type Locale, type PageKey } from '@/content/i18n'
 import { Shell } from './Shell'
 
@@ -32,6 +33,7 @@ export function Footer({ lang }: { lang: Locale }) {
   const recht: { key: PageKey; label: string }[] = [
     { key: 'impressum', label: d.footer.impressum },
     { key: 'datenschutz', label: d.footer.datenschutz },
+    { key: 'versand', label: d.footer.versand },
   ]
 
   return (
@@ -78,8 +80,10 @@ export function Footer({ lang }: { lang: Locale }) {
                   {site.contact.email}
                 </a>
               </li>
-              <li className="flex min-h-[2.75rem] items-center text-muted sm:min-h-0">
-                {site.contact.phone}
+              <li>
+                <a href={`https://wa.me/${bestellKanal.whatsapp}`} target="_blank" rel="noopener" className={fussLink}>
+                  WhatsApp {bestellKanal.whatsappAnzeige}
+                </a>
               </li>
             </ul>
           </div>

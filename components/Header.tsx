@@ -4,6 +4,7 @@ import { Shell } from './Shell'
 import { SprachUmschalter } from './SprachUmschalter'
 import { ThemaWahl } from './ThemaWahl'
 import { MobilMenu } from './MobilMenu'
+import { BestellKnopf } from './shop/BestellLeiste'
 
 /**
  * Zwei Kopfzeilen, eine Wahrheit.
@@ -89,7 +90,18 @@ export function Header({ lang, page }: { lang: Locale; page?: PageKey }) {
                 dunkel={d.thema.dunkel}
               />
             </div>
+
+            {/* Die Bestellung steht ganz rechts, abgesetzt: sie ist das
+                Einzige in der Kopfzeile, das etwas enthaelt statt nur
+                woanders hinzufuehren. */}
+            <div className="border-l border-line pl-4">
+              <BestellKnopf t={d.shop} label={d.nav.bestellung} />
+            </div>
           </div>
+
+          {/* ── darunter: Bestellung neben dem Burger ───────────── */}
+          <div className="flex items-center gap-1 md:hidden">
+            <BestellKnopf t={d.shop} label={d.nav.bestellung} />
 
           {/* ── darunter ─────────────────────────────────────────── */}
           <MobilMenu label={d.nav.ariaMenue}>
@@ -141,6 +153,7 @@ export function Header({ lang, page }: { lang: Locale; page?: PageKey }) {
               </div>
             </Shell>
           </MobilMenu>
+          </div>
         </div>
       </Shell>
     </header>

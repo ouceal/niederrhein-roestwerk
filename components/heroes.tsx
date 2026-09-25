@@ -1,5 +1,5 @@
 import { video } from '@/content/images'
-import { getDictionary, type Locale } from '@/content/i18n'
+import { getDictionary, path, type Locale } from '@/content/i18n'
 import { HeroVideo } from './HeroVideo'
 import { Shell, Kicker } from './Shell'
 import { ButtonLink } from './Button'
@@ -66,7 +66,7 @@ export function HeroNebel({ lang }: HeroProps) {
             {d.hero.sub}
           </p>
           <div className="mt-10 [text-shadow:none]">
-            <ButtonLink href="#warteliste">{d.hero.cta}</ButtonLink>
+            <ButtonLink href={`${path(lang, 'kaffee')}#shop`}>{d.hero.cta}</ButtonLink>
           </div>
         </div>
       </Shell>
@@ -86,7 +86,7 @@ export function HeroRedaktion({ lang }: HeroProps) {
         <h1 className="max-w-[17ch] text-display">{d.hero.headline}</h1>
         <div className="mt-12 grid gap-8 border-t border-line pt-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end sm:gap-16">
           <p className="max-w-prose text-lead font-light leading-relaxed text-muted">{d.hero.sub}</p>
-          <ButtonLink href="#warteliste">{d.hero.cta}</ButtonLink>
+          <ButtonLink href={`${path(lang, 'kaffee')}#shop`}>{d.hero.cta}</ButtonLink>
         </div>
       </Shell>
       <div className="relative aspect-[3/2] w-full sm:aspect-[5/2] lg:aspect-[3/1]">
@@ -111,7 +111,7 @@ export function HeroAsymmetrisch({ lang }: HeroProps) {
               {d.hero.sub}
             </p>
             <div className="mt-9">
-              <ButtonLink href="#warteliste">{d.hero.cta}</ButtonLink>
+              <ButtonLink href={`${path(lang, 'kaffee')}#shop`}>{d.hero.cta}</ButtonLink>
             </div>
           </div>
         </div>

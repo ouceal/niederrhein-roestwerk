@@ -460,3 +460,43 @@ html[data-wahl='dunkel'] .thema-eintrag[data-fuer='dunkel'] {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Bestellpanel.
+
+   Ein natives <dialog>. Der Browser legt den Rand davor selbst an
+   (::backdrop), hier bekommt er nur die Farbe der Seite statt Grau.
+   Solange es offen ist, scrollt die Seite dahinter nicht mit — sonst
+   wandert auf dem Telefon beim Wischen im Panel der Inhalt darunter.
+
+   Hereingeschoben wird mit transform, nicht mit top/right: das laeuft
+   auf der Grafikkarte. Auf dem Telefon von unten, ab 640 px von rechts.
+   -------------------------------------------------------------------------- */
+
+html:has(dialog.bestellpanel[open]) {
+  overflow: hidden;
+}
+
+.bestellpanel::backdrop {
+  background: rgb(10 7 6 / 0.55);
+}
+
+@keyframes panel-unten {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+@keyframes panel-rechts {
+  from { transform: translateX(32px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+.bestellpanel[open] {
+  animation: panel-unten 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .bestellpanel[open] {
+    animation-name: panel-rechts;
+  }
+}

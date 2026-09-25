@@ -13,10 +13,10 @@ export const it: Dictionary = {
     siteTitle: 'Niederrhein Röstwerk',
     homeTitle: 'Torrefazione a Willich',
     homeDescription:
-      'Piccola torrefazione a Willich, in Germania. Una sola origine, due caffè, tostatura in piccole partite. La vendita non è ancora aperta — iscriviti alla lista d’attesa.',
+      'Piccola torrefazione a Willich, in Germania. Una sola origine, due caffè, tostati freschi in piccole partite. Ordina ora: 250 g, 500 g o 1 kg.',
     kaffeeTitle: 'Caffè',
     kaffeeDescription:
-      'Due caffè da Sidamo, Etiopia: un profilo chiaro per il filtro e un profilo medio per l’espresso. Non ancora ordinabili.',
+      'Due caffè da Sidamo, Etiopia: chiaro per il filtro, medio per la macchina. Da 250 g, 500 g e 1 kg — ordinabili via WhatsApp o e-mail.',
     roestereiTitle: 'Torrefazione',
     roestereiDescription:
       'Dal caffè verde alla tostatura al tamburo, dalla degustazione al confezionamento: come si lavora al Röstwerk.',
@@ -33,6 +33,9 @@ export const it: Dictionary = {
     datenschutzTitle: 'Privacy',
     datenschutzDescription:
       'Informazioni sul trattamento dei dati personali ai sensi dell’art. 13 GDPR.',
+    versandTitle: 'Ordini e spedizione',
+    versandDescription:
+      'Come ordinare dal Niederrhein Röstwerk: prezzi, prezzi al kg, spese di spedizione, tempi di consegna e pagamento.',
   },
 
   thema: {
@@ -47,6 +50,7 @@ export const it: Dictionary = {
     roesterei: 'Torrefazione',
     ueberUns: 'Chi siamo',
     kontakt: 'Contatti',
+    bestellung: 'Ordine',
     ariaHaupt: 'Navigazione principale',
     ariaSeiten: 'Pagine',
     ariaRecht: 'Informazioni legali',
@@ -63,14 +67,15 @@ export const it: Dictionary = {
     spalteKontakt: 'Contatti',
     impressum: 'Note legali',
     datenschutz: 'Privacy',
+    versand: 'Ordini e spedizione',
     cookieZeile: 'Questo sito non usa cookie e non carica servizi di terze parti.',
   },
 
   hero: {
     kicker: 'Willich, Basso Reno',
     headline: 'Caffè da Sidamo, tostato a Willich.',
-    sub: 'Una sola origine. Due caffè. Tostatura in piccole partite. La vendita non è ancora iniziata.',
-    cta: 'Vai alla lista d’attesa',
+    sub: 'Una sola origine. Due caffè. Tostati freschi in piccole partite — da 250 g, 500 g e 1 kg.',
+    cta: 'Ordina il caffè',
   },
 
   home: {
@@ -100,7 +105,7 @@ export const it: Dictionary = {
         title: 'Perché piccole quantità',
         paragraphs: [
           'Il caffè è un alimento con una finestra breve. Due o quattro settimane dopo la tostatura è al suo punto migliore, poi si appiattisce. Chi tosta per fare scorta vende caffè vecchio.',
-          'Per questo il Röstwerk tosta su richiesta. Questo limita la quantità che possiamo offrire — ed è il motivo per cui c’è una lista d’attesa invece di un negozio aperto.',
+          'Per questo il Röstwerk tosta su richiesta, in piccole partite. Su ogni sacchetto c’è la data di tostatura — così vedi da solo quanto è fresco il tuo caffè.',
         ],
       },
     ],
@@ -126,25 +131,25 @@ export const it: Dictionary = {
     ],
     sortimentKicker: 'L’assortimento',
     sortimentTitel: 'Due caffè',
-    sortimentText: 'Entrambi da Sidamo, entrambi tostati in piccole partite. Non ancora ordinabili.',
-    sortimentCta: 'Entrambi i caffè in dettaglio',
+    sortimentText: 'Entrambi da Sidamo, entrambi tostati in piccole partite. Scegli formato e macinatura, aggiungili all’ordine, invialo via WhatsApp o e-mail.',
+    sortimentCta: 'Tutto sui due caffè',
   },
 
   kaffee: {
-    kicker: 'Assortimento',
+    kicker: 'Shop',
     h1: 'Due caffè, una sola origine',
     intro: [
       'Entrambi i caffè vengono dalla regione di Sidamo, nel sud dell’Etiopia. La differenza sta nella tostatura, non nel marketing: uno chiaro per il filtro, uno un po’ più scuro per la macchina.',
-      'Non si vende ancora. Quando si comincerà, qui compariranno il prezzo, il prezzo al 100 g, il peso netto e tutte le indicazioni obbligatorie sull’alimento.',
+      'Scegli formato e macinatura, aggiungi all’ordine e invialo via WhatsApp o e-mail. Confermiamo data di tostatura, totale e pagamento — poi il sacchetto parte.',
     ],
     srUeberschrift: 'I caffè in dettaglio',
     blockA: {
-      titel: 'Cosa ci sarà scritto sul sacchetto',
+      titel: 'Cosa c’è scritto sul sacchetto',
       text: 'La data di tostatura, non solo il termine minimo di conservazione. Regione d’origine, metodo di lavorazione e grado di tostatura. Peso netto e prezzo al 100 g. Nessun riconoscimento che non abbiamo, nessuna dicitura biologica senza certificazione.',
     },
     blockB: {
-      titel: 'Quanto ce ne sarà',
-      text: 'Dipende dalla capacità di tostatura e da quanto caffè verde compriamo per ogni partita. Indicheremo le quantità esatte solo quando saranno certe.',
+      titel: 'Fresco, non di magazzino',
+      text: 'Tostiamo in piccole partite. Se una è appena esaurita, nella conferma ti diciamo quando esce dal tamburo la prossima — invece di spedirti caffè vecchio.',
     },
   },
 
@@ -155,6 +160,7 @@ export const it: Dictionary = {
     roestgrad: 'Tostatura',
     noten: 'Note',
     zubereitung: 'Preparazione',
+    pflicht: 'Indicazioni',
   },
 
   kaffees: [
@@ -262,7 +268,7 @@ export const it: Dictionary = {
         titel: 'Perché piccole partite',
         absaetze: [
           'Il caffè tostato ha una finestra di circa due-sei settimane. Chi tosta in grande deve immagazzinare, e chi immagazzina vende caffè fuori da quella finestra.',
-          'Le piccole partite risolvono il problema, ma costano in volume. Per questo prima c’è una lista d’attesa e poi un negozio, non il contrario.',
+          'Le piccole partite risolvono il problema, ma costano in volume. Per questo preferiamo tostare più spesso e meno alla volta — e scrivere la data di tostatura su ogni sacchetto.',
         ],
       },
     ],
@@ -270,7 +276,7 @@ export const it: Dictionary = {
       { label: 'Luogo', wert: 'Willich, Renania Settentrionale-Vestfalia' },
       { label: 'Origine', wert: 'Sidamo, Etiopia' },
       { label: 'Tostatrice', wert: 'A tamburo' },
-      { label: 'Stato', wert: 'Prima dell’avvio' },
+      { label: 'Ordini', wert: 'Via WhatsApp o e-mail' },
     ],
   },
 
@@ -310,14 +316,113 @@ export const it: Dictionary = {
     absenden: 'Invia il messaggio',
   },
 
+  shop: {
+    abschnittKicker: 'Ordina',
+    groesse: 'Formato',
+    mahlgrad: 'Macinatura',
+    mahlgrade: {
+      bohne: 'In grani',
+      filter: 'Macinato per filtro',
+      siebtraeger: 'Macinato per espresso',
+    },
+    menge: 'Quantità',
+    weniger: 'Un sacchetto in meno',
+    mehr: 'Un sacchetto in più',
+    jeKg: '{betrag} / kg',
+    preisHinweis: ['Prezzo finale, più ', ''],
+    versandLink: 'spedizione',
+    hinzufuegen: 'Aggiungi all’ordine',
+    hinzugefuegt: 'Aggiunto all’ordine',
+    direkt: 'Ordina solo questo via WhatsApp',
+    pflichtWert: 'Caffè tostato, 100% Arabica. Paese d’origine: Etiopia. Produttore e indirizzo: vedi note legali.',
+
+    bestellung: 'Il tuo ordine',
+    oeffnen: 'Vedi ordine',
+    schliessen: 'Chiudi',
+    leer: 'Ancora niente di scelto. Scegli un caffè nello shop.',
+    artikelEins: '1 sacchetto',
+    artikelViele: '{n} sacchetti',
+    entfernen: 'Rimuovi',
+    zwischensumme: 'Subtotale',
+    versandkosten: 'Spedizione',
+    kostenlos: 'gratuita',
+    gesamt: 'Totale',
+    freiNoch: 'Ancora {betrag} per la spedizione gratuita.',
+    freiErreicht: 'La spedizione è gratuita.',
+    sendenWhatsapp: 'Invia via WhatsApp',
+    sendenEmail: 'Invia per e-mail',
+    ablauf:
+      'Il tuo ordine ci arriva come messaggio. Confermiamo data di tostatura, totale e pagamento — diventa vincolante solo con la nostra conferma.',
+
+    nachrichtGruss: 'Ciao Niederrhein Röstwerk, vorrei ordinare:',
+    nachrichtFelder: 'Nome:\nIndirizzo di consegna:',
+    nachrichtBetreff: 'Ordine',
+
+    gross: {
+      kicker: 'Quantità maggiori',
+      titel: 'Più di 1 kg? Volentieri.',
+      text: 'Per 5 kg, 10 kg o forniture regolari a bar o ufficio, scrivici in breve di cosa hai bisogno. Ricevi un’offerta con prezzo al chilo e un piano di tostatura.',
+      punkte: ['5 kg, 10 kg e oltre', 'Per bar, uffici e ristoranti', 'Una tantum o regolare'],
+      whatsapp: 'Chiedi via WhatsApp',
+      email: 'Chiedi per e-mail',
+      nachricht:
+        'Ciao Niederrhein Röstwerk, mi interessa una quantità maggiore di caffè.\n\nCaffè (filtro / espresso):\nQuantità:\nUna tantum o regolare:\nNome / azienda:\nCittà:',
+      betreff: 'Richiesta: quantità maggiore',
+    },
+  },
+
+  versandSeite: {
+    kicker: 'Ordinare',
+    h1: 'Come ordinare',
+    intro:
+      'Nessun account, nessun checkout, nessun cookie. Componi il tuo ordine, ce lo mandi come messaggio — e ti rispondiamo di persona.',
+    schritteTitel: 'In tre passi',
+    schritte: [
+      {
+        title: 'Scegli',
+        text: 'Scegli caffè, formato e macinatura e aggiungili all’ordine: 250 g, 500 g o 1 kg.',
+      },
+      {
+        title: 'Invia',
+        text: 'L’ordine ci arriva come messaggio già pronto, via WhatsApp o e-mail. Lì aggiungi nome e indirizzo di consegna.',
+      },
+      {
+        title: 'Conferma',
+        text: 'Rispondiamo con totale, data di tostatura e dati per il pagamento. Poi si tosta, si confeziona e si spedisce.',
+      },
+    ],
+    preiseTitel: 'Prezzi',
+    spalteGroesse: 'Formato',
+    spaltePreis: 'Prezzo',
+    spalteGrundpreis: 'Prezzo al kg',
+    versandTitel: 'Spedizione',
+    versandText:
+      'Spedizione in Germania: {kosten}. Gratuita da {frei} di ordine. Tutti i prezzi sono prezzi finali.',
+    lieferzeitTitel: 'Tempi di consegna',
+    lieferzeitText:
+      'Di norma 2–4 giorni lavorativi dal pagamento. Se una partita è appena esaurita, ti diciamo prima quando sarà pronta la prossima.',
+    zahlungTitel: 'Pagamento',
+    zahlungText:
+      'Paghi solo dopo che abbiamo confermato il tuo ordine. I dati per il pagamento sono nella nostra risposta.',
+    todoTitel: 'Prima della pubblicazione',
+    todoPunkte: [
+      'Far redigere condizioni generali e informativa sul recesso con modulo tipo, e collegarle qui e nel footer.',
+      'Stabilire i metodi di pagamento e indicarli qui.',
+      'Confermare i tempi di consegna.',
+      'Far verificare le indicazioni alimentari obbligatorie per ogni caffè: denominazione, quantità netta, nome e indirizzo dell’operatore.',
+      'Registrarsi per l’imposta sul caffè presso la dogana, registrare gli imballaggi su LUCID.',
+      'Spedizione all’estero: fissare i costi o escluderla esplicitamente.',
+    ],
+  },
+
   newsletter: {
-    titel: 'Lista d’attesa',
-    text: 'Una e-mail quando comincia la vendita. Poi al massimo una al mese: cosa è passato nel tamburo, cosa c’è. Disiscrizione con un clic, il link è in ogni e-mail.',
+    titel: 'Posta della tostatura',
+    text: 'Al massimo un’e-mail al mese: cosa è passato nel tamburo, cosa c’è di nuovo, quando una partita sta per finire. Disiscrizione con un clic, il link è in ogni e-mail.',
     labelEmail: 'Indirizzo e-mail',
     platzhalter: 'nome@esempio.it',
     absenden: 'Iscriviti',
     einwilligung: [
-      'Desidero ricevere la lista d’attesa per e-mail. Per conferma il Röstwerk invia un’e-mail con un link — solo dopo l’iscrizione è attiva. Posso revocare il consenso in qualsiasi momento. Informazioni sul trattamento: ',
+      'Desidero ricevere la posta della tostatura per e-mail. Per conferma il Röstwerk invia un’e-mail con un link — solo dopo l’iscrizione è attiva. Posso revocare il consenso in qualsiasi momento. Informazioni sul trattamento: ',
       '.',
     ],
     datenschutzLink: 'informativa sulla privacy',
@@ -327,7 +432,7 @@ export const it: Dictionary = {
   danke: {
     h1: 'Arrivato.',
     absaetze: [
-      'Se ti sei iscritto alla lista d’attesa: tra pochi minuti arriva un’e-mail con un link di conferma. Sei iscritto solo dopo il clic — senza clic non succede nulla.',
+      'Se ti sei iscritto alla posta della tostatura: tra pochi minuti arriva un’e-mail con un link di conferma. Sei iscritto solo dopo il clic — senza clic non succede nulla.',
       'Se hai scritto tramite il modulo di contatto, di norma rispondiamo entro due giorni lavorativi.',
     ],
     zurueck: 'Torna alla pagina iniziale',
@@ -408,30 +513,39 @@ export const it: Dictionary = {
         ],
       },
       {
-        titel: '4. Lista d’attesa e newsletter (doppio opt-in)',
+        titel: '4. Newsletter «Posta della tostatura» (doppio opt-in)',
         absaetze: [
-          'Per la lista d’attesa viene raccolto l’indirizzo e-mail. L’iscrizione avviene con doppio opt-in: dopo l’invio del modulo viene spedita un’e-mail con un link di conferma. L’iscrizione è valida solo dopo il clic su quel link. Senza conferma l’indirizzo non entra nella lista.',
+          'Per la newsletter viene raccolto l’indirizzo e-mail. L’iscrizione avviene con doppio opt-in: dopo l’invio del modulo viene spedita un’e-mail con un link di conferma. L’iscrizione è valida solo dopo il clic su quel link. Senza conferma l’indirizzo non entra nella lista.',
           'Come prova del consenso vengono conservati il momento dell’iscrizione, il momento della conferma e l’indirizzo IP utilizzato.',
           'La base giuridica è l’art. 6, par. 1, lett. a GDPR. Il consenso può essere revocato in qualsiasi momento con effetto per il futuro — tramite il link di disiscrizione in ogni e-mail o in forma libera all’indirizzo sopra indicato.',
           { text: '', todo: 'indicare il fornitore della newsletter e stipulare il contratto di responsabile del trattamento' },
         ],
       },
       {
-        titel: '5. Cookie e tracciamento',
+        titel: '5. Ordini via WhatsApp ed e-mail',
+        absaetze: [
+          'Gli ordini non passano da un modulo di questo sito. Il pulsante d’ordine apre WhatsApp o il tuo programma di posta con un messaggio già compilato. Non parte nulla finché non tocchi tu stesso «invia».',
+          'Fino ad allora la tua lista d’ordine resta solo nella memoria del tuo browser (localStorage), così non si perde quando cambi pagina. Non viene trasmessa a noi e sparisce appena la svuoti. Non è un cookie e serve solo alla funzione che stai usando (§ 25, comma 2, n. 2 TDDDG).',
+          'Nome, indirizzo di consegna, contatti e contenuto dell’ordine vengono trattati per evadere l’ordine. La base giuridica è l’art. 6, par. 1, lett. b GDPR. I dati di fatturazione vengono conservati per i periodi previsti dalla legge fiscale.',
+          { text: 'Con WhatsApp è coinvolta WhatsApp Ireland Ltd.; i metadati possono essere trasferiti anche negli USA. Chi non lo desidera ordina via e-mail. ', todo: 'far verificare l’uso di WhatsApp Business, i tempi di conservazione e gli obblighi di archiviazione' },
+        ],
+      },
+      {
+        titel: '6. Cookie e tracciamento',
         absaetze: [
           'Questo sito non usa cookie. Non c’è misurazione del traffico, non è integrato alcun servizio di analisi o pubblicità e non vengono caricati font esterni, mappe, piattaforme video o widget di chat. I caratteri usati risiedono sullo stesso server del sito.',
           'Per questo non c’è nemmeno un banner cookie. Non appena si aggiunge un servizio che usa cookie o accede a informazioni sul dispositivo, occorre prima raccogliere il consenso ai sensi del § 25 TDDDG.',
         ],
       },
       {
-        titel: '6. I tuoi diritti',
+        titel: '7. I tuoi diritti',
         absaetze: [
           'Hai diritto di accesso (art. 15), rettifica (art. 16), cancellazione (art. 17), limitazione del trattamento (art. 18), portabilità dei dati (art. 20) e opposizione (art. 21 GDPR). Un consenso dato può essere revocato in qualsiasi momento con effetto per il futuro.',
           'Hai inoltre diritto di proporre reclamo a un’autorità di controllo. Di norma è quella del paese in cui risiedi; per la Renania Settentrionale-Vestfalia è l’Autorità statale per la protezione dei dati e la libertà d’informazione NRW.',
         ],
       },
       {
-        titel: '7. Versione',
+        titel: '8. Versione',
         absaetze: [{ text: '', todo: 'inserire la data dell’ultimo aggiornamento' }],
       },
     ],

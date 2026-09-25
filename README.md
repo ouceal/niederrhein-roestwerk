@@ -1,8 +1,9 @@
 # Niederrhein Röstwerk — Website
 
-Statische Marketing- und Pre-Launch-Seite für eine kleine Kaffeerösterei in Willich, NRW.
-Ziel der Seite: Geschichte erzählen und E-Mail-Adressen für die Warteliste sammeln.
-**Kein Shop, kein Warenkorb, keine Preise.**
+Statische Website mit Shop für eine kleine Kaffeerösterei in Willich, NRW.
+Zwei Kaffees in **250 g, 500 g und 1 kg**, bestellt per **vorausgefüllter
+WhatsApp- oder E-Mail-Nachricht**. Größere Mengen (5 kg, 10 kg, Cafés,
+Büros) laufen als Anfrage über dieselben zwei Wege.
 
 Next.js 14 (App Router) · TypeScript · Tailwind CSS · statischer Export · Netlify
 
@@ -28,6 +29,30 @@ npm run typecheck
 
 `npm run build` erzeugt reines HTML in `out/`. Es gibt keinen Server, keine Functions
 und keine Runtime — `next.config.mjs` steht auf `output: 'export'`.
+
+## Shop
+
+**Kein Checkout, keine Zahlung auf der Seite, kein Cookie.** Wer bestellt,
+stellt eine Bestellliste zusammen und schickt sie als fertige Nachricht an
+uns. Wir bestätigen Röstdatum, Gesamtbetrag und Zahlung — erst dann ist die
+Bestellung verbindlich.
+
+| Was | Wo |
+|---|---|
+| Preise, Größen, Versandkosten, Frei-ab-Grenze, WhatsApp-Nummer | `content/shop.ts` — die einzige Stelle mit Zahlen |
+| Texte rund ums Bestellen (4 Sprachen) | `shop` und `versandSeite` in `content/i18n/*.ts` |
+| Kaufbereich unter jedem Kaffee | `components/shop/Kaufbox.tsx` |
+| Bestellliste (Kontext, localStorage, Nachrichtentext) | `components/shop/Bestellung.tsx` |
+| Leiste unten + Bestellpanel + Knopf in der Kopfzeile | `components/shop/BestellLeiste.tsx` |
+| „Mehr als 1 kg?" | `components/shop/Grossmengen.tsx` |
+| Seite „Bestellung & Versand" | `components/pages/Versand.tsx` → `/de/bestellung-versand/` |
+
+Aktuell: 250 g 12,90 € · 500 g 23,90 € · 1 kg 44,90 € (beide Kaffees gleich),
+Versand 4,90 €, ab 40 € kostenlos. Grundpreis je kg steht an jedem Preis (PAngV).
+
+Die Bestellliste liegt nur im `localStorage` des Browsers, jeder Zugriff in
+`try/catch`. Sie verlässt den Browser erst, wenn jemand selbst auf Senden
+tippt — so steht es auch in der Datenschutzerklärung, Abschnitt 5.
 
 ## Deploy auf Netlify
 
@@ -168,7 +193,11 @@ werden. Die Bilder in `kaffee/portraits/` gehören nicht auf diese Seite.
 - [ ] **Datenschutzerklärung** vervollständigen und prüfen lassen. Das Gerüst beschreibt bereits korrekt, was die Seite technisch tut; es fehlen Verantwortlicher, Speicherfristen und der Newsletter-Dienstleister.
 - [ ] `noindex` auf Impressum und Datenschutz entfernen, sobald sie fertig sind (`noindex`-Liste in `app/[lang]/[slug]/page.tsx`).
 - [ ] **Double-Opt-In zu Ende bauen, pro Sprache.** Netlify Forms speichert die Adresse nur. Es fehlt: Bestätigungsmail mit Einmal-Link **in der Sprache der Anmeldung**, Versand erst nach Klick, Protokollierung von Anmelde- und Bestätigungszeitpunkt plus IP. Ohne diesen Teil ist der Versand nicht rechtssicher — und alle vier Formularseiten versprechen die Bestätigungsmail bereits.
-- [ ] Echte Kontaktdaten in `content/site.ts`.
+- [ ] **E-Mail-Adresse** in `content/site.ts` — Bestellungen per E-Mail gehen an diese Adresse und laufen bis dahin ins Leere.
+- [ ] **AGB und Widerrufsbelehrung** (mit Muster-Widerrufsformular) erstellen lassen, als Seiten anlegen, im Footer und auf „Bestellung & Versand" verlinken.
+- [ ] **Zahlungsarten** festlegen und auf „Bestellung & Versand" nennen.
+- [ ] **Lieferzeit** (steht auf 2–4 Werktage) bestätigen.
+- [ ] Der TODO-Kasten unten auf „Bestellung & Versand" muss leer sein.
 - [ ] Echte Kaffeedaten in allen vier Wörterbüchern — Namen, Aufbereitung, Anbauhöhe sind Platzhalter.
 - [ ] Gründergeschichte durch die echte ersetzen, in allen vier Sprachen, eigenes Porträt einsetzen.
 - [ ] Foto für den Schritt „Verpackung": in `components/ProzessSchritt.tsx` steht in `schrittBilder` ein `null`. Dort einen Bildschlüssel eintragen, und der Schritt springt von selbst ins zweispaltige Layout zurück — der alt-Text kommt dann automatisch aus allen vier Wörterbüchern.

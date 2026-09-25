@@ -4,6 +4,7 @@ import { Figure } from '@/components/Figure'
 import { Shell, Section, Kicker, Prose } from '@/components/Shell'
 import { CoffeeCard } from '@/components/CoffeeCard'
 import { Newsletter } from '@/components/Newsletter'
+import { Grossmengen } from '@/components/shop/Grossmengen'
 
 export function Kaffee({ lang }: { lang: Locale }) {
   const d = getDictionary(lang)
@@ -38,7 +39,7 @@ export function Kaffee({ lang }: { lang: Locale }) {
         </Shell>
       </Section>
 
-      <Section tone="surface" className="!pt-12 sm:!pt-16">
+      <Section tone="surface" id="shop" className="scroll-mt-4 !pt-12 sm:!pt-16">
         <Shell>
           {/* Sichtbar ist die Ueberschrift nicht noetig, fuer die
               Gliederung schon: sonst springt die Struktur von h1 auf h3. */}
@@ -68,6 +69,8 @@ export function Kaffee({ lang }: { lang: Locale }) {
           </div>
         </Shell>
       </Section>
+
+      <Grossmengen lang={lang} tone="surface" />
 
       <Newsletter lang={lang} />
     </>

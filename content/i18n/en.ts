@@ -13,10 +13,10 @@ export const en: Dictionary = {
     siteTitle: 'Niederrhein Röstwerk',
     homeTitle: 'Coffee roastery in Willich',
     homeDescription:
-      'A small coffee roastery in Willich, Germany. One origin, two coffees, roasted in small batches. Sales have not started yet — join the waiting list.',
+      'A small coffee roastery in Willich, Germany. One origin, two coffees, freshly roasted in small batches. Order now: 250 g, 500 g or 1 kg.',
     kaffeeTitle: 'Coffee',
     kaffeeDescription:
-      'Two coffees from Sidamo, Ethiopia: a light filter profile and a medium espresso profile. Not yet available to order.',
+      'Two coffees from Sidamo, Ethiopia: light for filter, medium for the machine. In 250 g, 500 g and 1 kg — ordered via WhatsApp or email.',
     roestereiTitle: 'Roastery',
     roestereiDescription:
       'From green coffee through drum roasting and cupping to packaging: how the work is done at the Röstwerk.',
@@ -33,6 +33,9 @@ export const en: Dictionary = {
     datenschutzTitle: 'Privacy',
     datenschutzDescription:
       'Information on the processing of personal data under Article 13 GDPR.',
+    versandTitle: 'Ordering & shipping',
+    versandDescription:
+      'How to order from Niederrhein Röstwerk: prices, unit prices, shipping costs, delivery time and payment.',
   },
 
   thema: {
@@ -47,6 +50,7 @@ export const en: Dictionary = {
     roesterei: 'Roastery',
     ueberUns: 'About',
     kontakt: 'Contact',
+    bestellung: 'Order',
     ariaHaupt: 'Main navigation',
     ariaSeiten: 'Pages',
     ariaRecht: 'Legal',
@@ -63,14 +67,15 @@ export const en: Dictionary = {
     spalteKontakt: 'Contact',
     impressum: 'Legal notice',
     datenschutz: 'Privacy',
+    versand: 'Ordering & shipping',
     cookieZeile: 'This site sets no cookies and loads nothing from third parties.',
   },
 
   hero: {
     kicker: 'Willich, Lower Rhine',
     headline: 'Coffee from Sidamo, roasted in Willich.',
-    sub: 'One origin. Two coffees. Roasted in small batches. Sales have not started yet.',
-    cta: 'Join the waiting list',
+    sub: 'One origin. Two coffees. Freshly roasted in small batches — in 250 g, 500 g and 1 kg.',
+    cta: 'Order coffee',
   },
 
   home: {
@@ -100,7 +105,7 @@ export const en: Dictionary = {
         title: 'Why small amounts',
         paragraphs: [
           'Coffee is a food with a short best window. Two to four weeks after roasting it is at its peak, then it flattens out. Roast for stock and you sell old coffee.',
-          'So the Röstwerk roasts to demand. That limits how much we can offer — and it is the reason there is a waiting list instead of an open shop.',
+          'So the Röstwerk roasts to demand, in small batches. Every bag carries its roast date — so you can see for yourself how fresh your coffee is.',
         ],
       },
     ],
@@ -126,25 +131,25 @@ export const en: Dictionary = {
     ],
     sortimentKicker: 'The range',
     sortimentTitel: 'Two coffees',
-    sortimentText: 'Both from Sidamo, both roasted in small batches. Not yet available to order.',
-    sortimentCta: 'Both coffees in detail',
+    sortimentText: 'Both from Sidamo, both roasted in small batches. Pick a size and grind, add it to your order, send it via WhatsApp or email.',
+    sortimentCta: 'Everything about both coffees',
   },
 
   kaffee: {
-    kicker: 'Range',
+    kicker: 'Shop',
     h1: 'Two coffees, one origin',
     intro: [
       'Both coffees come from the Sidamo region in southern Ethiopia. The difference is in the roast, not the marketing: one light for filter, one a little darker for the machine.',
-      'Nothing is for sale yet. Once it is, this page will carry the price, the unit price per 100 g, the fill weight and every mandatory food label detail.',
+      'Pick a size and grind, add it to your order and send it via WhatsApp or email. We confirm the roast date, the total and payment — then the bag goes out.',
     ],
     srUeberschrift: 'The coffees in detail',
     blockA: {
-      titel: 'What the bag will say',
+      titel: 'What the bag says',
       text: 'Roast date, not just a best-before date. Region, processing method and roast level. Fill weight and unit price. No awards we do not hold, no organic claim without certification.',
     },
     blockB: {
-      titel: 'How much there will be',
-      text: 'That depends on roasting capacity and on how much green coffee we buy per batch. We will name exact amounts once they are fixed.',
+      titel: 'Fresh, not from stock',
+      text: 'We roast in small batches. If one has just sold out, we tell you in our confirmation when the next one comes out of the drum — rather than sending you old coffee.',
     },
   },
 
@@ -155,6 +160,7 @@ export const en: Dictionary = {
     roestgrad: 'Roast level',
     noten: 'Notes',
     zubereitung: 'Brewing',
+    pflicht: 'Details',
   },
 
   kaffees: [
@@ -262,7 +268,7 @@ export const en: Dictionary = {
         titel: 'Why small batches',
         absaetze: [
           'Roasted coffee has a window of about two to six weeks. Roast big and you have to store it, and storing means selling coffee outside that window.',
-          'Small batches solve that, but they cost volume. So there is a waiting list first and a shop after — not the other way round.',
+          'Small batches solve that, but they cost volume. So we would rather roast more often and less each time — and print the roast date on every bag.',
         ],
       },
     ],
@@ -270,7 +276,7 @@ export const en: Dictionary = {
       { label: 'Location', wert: 'Willich, North Rhine-Westphalia' },
       { label: 'Origin', wert: 'Sidamo, Ethiopia' },
       { label: 'Roaster', wert: 'Drum' },
-      { label: 'Status', wert: 'Before launch' },
+      { label: 'Ordering', wert: 'Via WhatsApp or email' },
     ],
   },
 
@@ -310,14 +316,113 @@ export const en: Dictionary = {
     absenden: 'Send message',
   },
 
+  shop: {
+    abschnittKicker: 'Order',
+    groesse: 'Size',
+    mahlgrad: 'Grind',
+    mahlgrade: {
+      bohne: 'Whole bean',
+      filter: 'Ground for filter',
+      siebtraeger: 'Ground for espresso machine',
+    },
+    menge: 'Quantity',
+    weniger: 'One bag less',
+    mehr: 'One bag more',
+    jeKg: '{betrag} / kg',
+    preisHinweis: ['Final price, plus ', ''],
+    versandLink: 'shipping',
+    hinzufuegen: 'Add to order',
+    hinzugefuegt: 'Added to your order',
+    direkt: 'Order just this one via WhatsApp',
+    pflichtWert: 'Roasted coffee, 100% Arabica. Country of origin: Ethiopia. Producer and address: see legal notice.',
+
+    bestellung: 'Your order',
+    oeffnen: 'View order',
+    schliessen: 'Close',
+    leer: 'Nothing selected yet. Pick a coffee in the shop.',
+    artikelEins: '1 bag',
+    artikelViele: '{n} bags',
+    entfernen: 'Remove',
+    zwischensumme: 'Subtotal',
+    versandkosten: 'Shipping',
+    kostenlos: 'free',
+    gesamt: 'Total',
+    freiNoch: '{betrag} more for free shipping.',
+    freiErreicht: 'Shipping is free.',
+    sendenWhatsapp: 'Send via WhatsApp',
+    sendenEmail: 'Send by email',
+    ablauf:
+      'Your order reaches us as a message. We confirm the roast date, the total and payment — it only becomes binding with our confirmation.',
+
+    nachrichtGruss: 'Hello Niederrhein Röstwerk, I would like to order:',
+    nachrichtFelder: 'Name:\nDelivery address:',
+    nachrichtBetreff: 'Order',
+
+    gross: {
+      kicker: 'Larger amounts',
+      titel: 'More than 1 kg? Gladly.',
+      text: 'For 5 kg, 10 kg or regular deliveries to a café or office, send us a short note on what you need. You get an offer with a price per kilo and a roasting plan.',
+      punkte: ['5 kg, 10 kg and more', 'For cafés, offices and restaurants', 'One-off or regular'],
+      whatsapp: 'Ask via WhatsApp',
+      email: 'Ask by email',
+      nachricht:
+        'Hello Niederrhein Röstwerk, I am interested in a larger amount of coffee.\n\nCoffee (filter / espresso):\nAmount:\nOne-off or regular:\nName / company:\nCity:',
+      betreff: 'Enquiry: larger amount',
+    },
+  },
+
+  versandSeite: {
+    kicker: 'Ordering',
+    h1: 'How to order',
+    intro:
+      'No account, no checkout, no cookies. You put your order together, send it to us as a message — and we get back to you in person.',
+    schritteTitel: 'In three steps',
+    schritte: [
+      {
+        title: 'Choose',
+        text: 'Pick a coffee, size and grind and add it to your order: 250 g, 500 g or 1 kg.',
+      },
+      {
+        title: 'Send',
+        text: 'Your order reaches us as a ready-made message, via WhatsApp or email. You add your name and delivery address there.',
+      },
+      {
+        title: 'Confirm',
+        text: 'We reply with the total, the roast date and payment details. Then it is roasted, packed and shipped.',
+      },
+    ],
+    preiseTitel: 'Prices',
+    spalteGroesse: 'Size',
+    spaltePreis: 'Price',
+    spalteGrundpreis: 'Unit price',
+    versandTitel: 'Shipping',
+    versandText:
+      'Shipping within Germany: {kosten}. Free shipping from an order value of {frei}. All prices are final prices.',
+    lieferzeitTitel: 'Delivery time',
+    lieferzeitText:
+      'Usually 2–4 working days after payment. If a batch has just sold out, we tell you beforehand when the next one is ready.',
+    zahlungTitel: 'Payment',
+    zahlungText:
+      'You only pay once we have confirmed your order. The payment details are in our reply.',
+    todoTitel: 'Before going live',
+    todoPunkte: [
+      'Have terms and conditions and a cancellation policy with a model withdrawal form drawn up, and link them here and in the footer.',
+      'Decide on payment methods and name them here.',
+      'Confirm the delivery time.',
+      'Have the mandatory food information checked for each coffee: name, net quantity, name and address of the food business operator.',
+      'Register for coffee tax with the main customs office, register packaging with LUCID.',
+      'Shipping abroad: set costs or explicitly exclude it.',
+    ],
+  },
+
   newsletter: {
-    titel: 'Waiting list',
-    text: 'One email when sales start. After that, one a month at most: what was in the drum, what is available. Unsubscribe in one click, the link is in every email.',
+    titel: 'Roast post',
+    text: 'One email a month at most: what was in the drum, what is new, when a batch is running low. Unsubscribe in one click, the link is in every email.',
     labelEmail: 'Email address',
     platzhalter: 'name@example.com',
     absenden: 'Sign up',
     einwilligung: [
-      'I would like to receive the waiting list by email. The Röstwerk will send a confirmation email with a link — the sign-up is only active after that. I can withdraw this consent at any time. How the data is processed: ',
+      'I would like to receive the roast post by email. The Röstwerk will send a confirmation email with a link — the sign-up is only active after that. I can withdraw this consent at any time. How the data is processed: ',
       '.',
     ],
     datenschutzLink: 'privacy policy',
@@ -327,7 +432,7 @@ export const en: Dictionary = {
   danke: {
     h1: 'It arrived.',
     absaetze: [
-      'If you signed up for the waiting list: an email with a confirmation link is on its way. You are only on the list after you click it — without the click, nothing happens.',
+      'If you signed up for the roast post: an email with a confirmation link is on its way. You are only signed up after you click it — without the click, nothing happens.',
       'If you wrote through the contact form, we usually reply within two working days.',
     ],
     zurueck: 'Back to the home page',
@@ -408,30 +513,39 @@ export const en: Dictionary = {
         ],
       },
       {
-        titel: '4. Waiting list and newsletter (double opt-in)',
+        titel: '4. “Roast post” newsletter (double opt-in)',
         absaetze: [
-          'The waiting list collects an email address. Sign-up runs as a double opt-in: after the form is submitted, an email with a confirmation link is sent. The sign-up only takes effect when that link is clicked. Without confirmation, the address is not added to the list.',
+          'The roast post collects an email address. Sign-up runs as a double opt-in: after the form is submitted, an email with a confirmation link is sent. The sign-up only takes effect when that link is clicked. Without confirmation, the address is not added to the list.',
           'To document the consent, the time of sign-up, the time of confirmation and the IP address used are stored.',
           'The legal basis is Art. 6(1)(a) GDPR. Consent can be withdrawn at any time with effect for the future — via the unsubscribe link in every email or informally to the address above.',
           { text: '', todo: 'name the newsletter provider and conclude a data processing agreement' },
         ],
       },
       {
-        titel: '5. Cookies and tracking',
+        titel: '5. Orders via WhatsApp and email',
+        absaetze: [
+          'Orders do not go through a form on this website. The order button opens WhatsApp or your email program with a pre-filled message. Nothing is sent until you tap send yourself.',
+          'Until then your order list lives only in your own browser’s storage (localStorage), so it is not lost when you change pages. It is not transmitted to us and disappears as soon as you empty it. This is not a cookie and serves only the function you are using yourself (Section 25(2) no. 2 TDDDG).',
+          'We process your name, delivery address, contact details and the order contents to fulfil the order. The legal basis is Article 6(1)(b) GDPR. Invoice data is kept for the periods required by tax law.',
+          { text: 'WhatsApp involves WhatsApp Ireland Ltd.; metadata may also be transferred to the USA. If you do not want that, order by email. ', todo: 'have the use of WhatsApp Business, storage periods and retention periods reviewed' },
+        ],
+      },
+      {
+        titel: '6. Cookies and tracking',
         absaetze: [
           'This website sets no cookies. There is no audience measurement, no analytics or advertising service is embedded, and no external fonts, maps, video platforms or chat widgets are loaded. The fonts in use sit on the same server as the website.',
           'That is why there is no cookie banner either. As soon as a service is added that sets cookies or accesses information on the device, consent must be obtained first under § 25 TDDDG.',
         ],
       },
       {
-        titel: '6. Your rights',
+        titel: '7. Your rights',
         absaetze: [
           'You have the right to access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and objection (Art. 21 GDPR). Consent once given can be withdrawn at any time with effect for the future.',
           'You also have the right to lodge a complaint with a supervisory authority. Normally this is the authority of the country you live in; for North Rhine-Westphalia it is the State Commissioner for Data Protection and Freedom of Information NRW.',
         ],
       },
       {
-        titel: '7. Version',
+        titel: '8. Version',
         absaetze: [{ text: '', todo: 'add the date of the last update' }],
       },
     ],

@@ -13,10 +13,10 @@ export const es: Dictionary = {
     siteTitle: 'Niederrhein Röstwerk',
     homeTitle: 'Tostadero de café en Willich',
     homeDescription:
-      'Pequeño tostadero de café en Willich, Alemania. Un solo origen, dos cafés, tueste en lotes pequeños. La venta aún no ha empezado — apúntate a la lista de espera.',
+      'Pequeño tostadero de café en Willich, Alemania. Un solo origen, dos cafés, recién tostados en lotes pequeños. Pide ya: 250 g, 500 g o 1 kg.',
     kaffeeTitle: 'Café',
     kaffeeDescription:
-      'Dos cafés de Sidamo, Etiopía: un perfil claro para filtro y un perfil medio para espresso. Todavía no se pueden pedir.',
+      'Dos cafés de Sidamo, Etiopía: claro para filtro, medio para la máquina. En 250 g, 500 g y 1 kg — se piden por WhatsApp o correo.',
     roestereiTitle: 'Tostadero',
     roestereiDescription:
       'Del café verde al tueste en tambor, de la cata al envasado: cómo se trabaja en el Röstwerk.',
@@ -33,6 +33,9 @@ export const es: Dictionary = {
     datenschutzTitle: 'Privacidad',
     datenschutzDescription:
       'Información sobre el tratamiento de datos personales según el art. 13 del RGPD.',
+    versandTitle: 'Pedidos y envío',
+    versandDescription:
+      'Cómo pedir al Niederrhein Röstwerk: precios, precio por kilo, gastos de envío, plazo de entrega y pago.',
   },
 
   thema: {
@@ -47,6 +50,7 @@ export const es: Dictionary = {
     roesterei: 'Tostadero',
     ueberUns: 'Sobre nosotros',
     kontakt: 'Contacto',
+    bestellung: 'Pedido',
     ariaHaupt: 'Navegación principal',
     ariaSeiten: 'Páginas',
     ariaRecht: 'Información legal',
@@ -63,14 +67,15 @@ export const es: Dictionary = {
     spalteKontakt: 'Contacto',
     impressum: 'Aviso legal',
     datenschutz: 'Privacidad',
+    versand: 'Pedidos y envío',
     cookieZeile: 'Esta página no usa cookies ni carga servicios de terceros.',
   },
 
   hero: {
     kicker: 'Willich, Bajo Rin',
     headline: 'Café de Sidamo, tostado en Willich.',
-    sub: 'Un solo origen. Dos cafés. Tueste en lotes pequeños. La venta todavía no ha empezado.',
-    cta: 'Ir a la lista de espera',
+    sub: 'Un solo origen. Dos cafés. Recién tostados en lotes pequeños — en 250 g, 500 g y 1 kg.',
+    cta: 'Pedir café',
   },
 
   home: {
@@ -100,7 +105,7 @@ export const es: Dictionary = {
         title: 'Por qué cantidades pequeñas',
         paragraphs: [
           'El café es un alimento con una ventana corta. De dos a cuatro semanas después del tueste está en su punto; luego se apaga. Quien tuesta para almacenar vende café viejo.',
-          'Por eso el Röstwerk tuesta según la demanda. Eso limita la cantidad que podemos ofrecer — y es la razón de que haya una lista de espera en lugar de una tienda abierta.',
+          'Por eso el Röstwerk tuesta según la demanda, en lotes pequeños. Cada bolsa lleva su fecha de tueste — así ves tú mismo lo fresco que está tu café.',
         ],
       },
     ],
@@ -126,25 +131,25 @@ export const es: Dictionary = {
     ],
     sortimentKicker: 'El surtido',
     sortimentTitel: 'Dos cafés',
-    sortimentText: 'Los dos de Sidamo, los dos tostados en lotes pequeños. Todavía no se pueden pedir.',
-    sortimentCta: 'Los dos cafés en detalle',
+    sortimentText: 'Los dos de Sidamo, los dos tostados en lotes pequeños. Elige tamaño y molienda, añádelo al pedido y envíalo por WhatsApp o correo.',
+    sortimentCta: 'Todo sobre los dos cafés',
   },
 
   kaffee: {
-    kicker: 'Surtido',
+    kicker: 'Tienda',
     h1: 'Dos cafés, un solo origen',
     intro: [
       'Los dos cafés vienen de la región de Sidamo, en el sur de Etiopía. La diferencia está en el tueste, no en el marketing: uno claro para filtro y otro algo más oscuro para la máquina.',
-      'Todavía no se vende nada. Cuando empiece, aquí estarán el precio, el precio por 100 g, el peso neto y toda la información obligatoria del alimento.',
+      'Elige tamaño y molienda, añádelo al pedido y envíalo por WhatsApp o correo. Confirmamos fecha de tueste, total y pago — y la bolsa sale.',
     ],
     srUeberschrift: 'Los cafés en detalle',
     blockA: {
-      titel: 'Lo que pondrá en la bolsa',
+      titel: 'Lo que pone en la bolsa',
       text: 'La fecha de tueste, no solo la de consumo preferente. Región de origen, método de beneficio y grado de tueste. Peso neto y precio por 100 g. Ningún premio que no tengamos y ninguna mención ecológica sin certificación.',
     },
     blockB: {
-      titel: 'Cuánto habrá',
-      text: 'Depende de la capacidad de tueste y de cuánto café verde compremos por lote. Daremos cantidades exactas cuando estén cerradas.',
+      titel: 'Fresco, no de almacén',
+      text: 'Tostamos en lotes pequeños. Si uno se acaba de agotar, te decimos en la confirmación cuándo sale el siguiente del tambor — en lugar de mandarte café viejo.',
     },
   },
 
@@ -155,6 +160,7 @@ export const es: Dictionary = {
     roestgrad: 'Tueste',
     noten: 'Notas',
     zubereitung: 'Preparación',
+    pflicht: 'Datos',
   },
 
   kaffees: [
@@ -262,7 +268,7 @@ export const es: Dictionary = {
         titel: 'Por qué lotes pequeños',
         absaetze: [
           'El café tostado tiene una ventana de unas dos a seis semanas. Quien tuesta en grande tiene que almacenar, y quien almacena vende café fuera de esa ventana.',
-          'Los lotes pequeños lo resuelven, pero cuestan volumen. Por eso primero hay una lista de espera y después una tienda, y no al revés.',
+          'Los lotes pequeños lo resuelven, pero cuestan volumen. Por eso preferimos tostar más a menudo y menos cada vez — y poner la fecha de tueste en cada bolsa.',
         ],
       },
     ],
@@ -270,7 +276,7 @@ export const es: Dictionary = {
       { label: 'Lugar', wert: 'Willich, Renania del Norte-Westfalia' },
       { label: 'Origen', wert: 'Sidamo, Etiopía' },
       { label: 'Tostadora', wert: 'De tambor' },
-      { label: 'Estado', wert: 'Antes del lanzamiento' },
+      { label: 'Pedidos', wert: 'Por WhatsApp o correo' },
     ],
   },
 
@@ -310,14 +316,113 @@ export const es: Dictionary = {
     absenden: 'Enviar mensaje',
   },
 
+  shop: {
+    abschnittKicker: 'Pedir',
+    groesse: 'Tamaño',
+    mahlgrad: 'Molienda',
+    mahlgrade: {
+      bohne: 'En grano',
+      filter: 'Molido para filtro',
+      siebtraeger: 'Molido para espresso',
+    },
+    menge: 'Cantidad',
+    weniger: 'Una bolsa menos',
+    mehr: 'Una bolsa más',
+    jeKg: '{betrag} / kg',
+    preisHinweis: ['Precio final, más ', ''],
+    versandLink: 'envío',
+    hinzufuegen: 'Añadir al pedido',
+    hinzugefuegt: 'Añadido al pedido',
+    direkt: 'Pedir solo este por WhatsApp',
+    pflichtWert: 'Café tostado, 100 % arábica. País de origen: Etiopía. Fabricante y dirección: ver aviso legal.',
+
+    bestellung: 'Tu pedido',
+    oeffnen: 'Ver pedido',
+    schliessen: 'Cerrar',
+    leer: 'Todavía no has elegido nada. Escoge un café en la tienda.',
+    artikelEins: '1 bolsa',
+    artikelViele: '{n} bolsas',
+    entfernen: 'Quitar',
+    zwischensumme: 'Subtotal',
+    versandkosten: 'Envío',
+    kostenlos: 'gratis',
+    gesamt: 'Total',
+    freiNoch: 'Te faltan {betrag} para el envío gratis.',
+    freiErreicht: 'El envío es gratis.',
+    sendenWhatsapp: 'Enviar por WhatsApp',
+    sendenEmail: 'Enviar por correo',
+    ablauf:
+      'Tu pedido nos llega como mensaje. Confirmamos fecha de tueste, total y pago — solo es vinculante con nuestra confirmación.',
+
+    nachrichtGruss: 'Hola, Niederrhein Röstwerk, quiero pedir:',
+    nachrichtFelder: 'Nombre:\nDirección de entrega:',
+    nachrichtBetreff: 'Pedido',
+
+    gross: {
+      kicker: 'Cantidades grandes',
+      titel: '¿Más de 1 kg? Encantados.',
+      text: 'Para 5 kg, 10 kg o entregas regulares a una cafetería u oficina, escríbenos en pocas líneas lo que necesitas. Recibes una oferta con precio por kilo y un plan de tueste.',
+      punkte: ['5 kg, 10 kg y más', 'Para cafeterías, oficinas y restaurantes', 'Una vez o de forma regular'],
+      whatsapp: 'Preguntar por WhatsApp',
+      email: 'Preguntar por correo',
+      nachricht:
+        'Hola, Niederrhein Röstwerk, me interesa una cantidad mayor de café.\n\nCafé (filtro / espresso):\nCantidad:\nUna vez o regular:\nNombre / empresa:\nCiudad:',
+      betreff: 'Consulta: cantidad mayor',
+    },
+  },
+
+  versandSeite: {
+    kicker: 'Pedidos',
+    h1: 'Cómo pedir',
+    intro:
+      'Sin cuenta, sin checkout, sin cookies. Montas tu pedido, nos lo mandas como mensaje — y te respondemos en persona.',
+    schritteTitel: 'En tres pasos',
+    schritte: [
+      {
+        title: 'Elegir',
+        text: 'Elige café, tamaño y molienda y añádelo al pedido: 250 g, 500 g o 1 kg.',
+      },
+      {
+        title: 'Enviar',
+        text: 'El pedido nos llega como mensaje ya escrito, por WhatsApp o correo. Allí añades tu nombre y dirección de entrega.',
+      },
+      {
+        title: 'Confirmar',
+        text: 'Respondemos con el total, la fecha de tueste y los datos de pago. Después se tuesta, se envasa y se envía.',
+      },
+    ],
+    preiseTitel: 'Precios',
+    spalteGroesse: 'Tamaño',
+    spaltePreis: 'Precio',
+    spalteGrundpreis: 'Precio por kg',
+    versandTitel: 'Envío',
+    versandText:
+      'Envío dentro de Alemania: {kosten}. Gratis a partir de {frei} de pedido. Todos los precios son precios finales.',
+    lieferzeitTitel: 'Plazo de entrega',
+    lieferzeitText:
+      'Normalmente 2–4 días laborables tras el pago. Si un lote se acaba de agotar, te decimos antes cuándo estará listo el siguiente.',
+    zahlungTitel: 'Pago',
+    zahlungText:
+      'Solo pagas cuando hemos confirmado tu pedido. Los datos de pago van en nuestra respuesta.',
+    todoTitel: 'Antes de publicar',
+    todoPunkte: [
+      'Encargar condiciones generales e información sobre desistimiento con formulario modelo, y enlazarlas aquí y en el pie de página.',
+      'Definir los medios de pago e indicarlos aquí.',
+      'Confirmar el plazo de entrega.',
+      'Revisar la información alimentaria obligatoria de cada café: denominación, cantidad neta, nombre y dirección del operador.',
+      'Darse de alta del impuesto sobre el café en la aduana y registrar los envases en LUCID.',
+      'Envíos al extranjero: fijar gastos o excluirlos expresamente.',
+    ],
+  },
+
   newsletter: {
-    titel: 'Lista de espera',
-    text: 'Un correo cuando empiece la venta. Después, como mucho uno al mes: qué ha pasado por el tambor y qué hay. Baja con un clic, el enlace va en cada correo.',
+    titel: 'Correo del tueste',
+    text: 'Como mucho un correo al mes: qué ha pasado por el tambor, qué hay de nuevo, cuándo se acaba un lote. Baja con un clic, el enlace va en cada correo.',
     labelEmail: 'Dirección de correo',
     platzhalter: 'nombre@ejemplo.es',
     absenden: 'Apuntarme',
     einwilligung: [
-      'Quiero recibir la lista de espera por correo. Para confirmarlo, el Röstwerk envía un correo con un enlace — el alta solo se activa después. Puedo retirar el consentimiento en cualquier momento. Información sobre el tratamiento: ',
+      'Quiero recibir el correo del tueste. Para confirmarlo, el Röstwerk envía un correo con un enlace — el alta solo se activa después. Puedo retirar el consentimiento en cualquier momento. Información sobre el tratamiento: ',
       '.',
     ],
     datenschutzLink: 'política de privacidad',
@@ -327,7 +432,7 @@ export const es: Dictionary = {
   danke: {
     h1: 'Ha llegado.',
     absaetze: [
-      'Si te has apuntado a la lista de espera: en unos minutos recibirás un correo con un enlace de confirmación. Solo estás en la lista después de hacer clic — sin clic no pasa nada.',
+      'Si te has apuntado al correo del tueste: en unos minutos recibirás un correo con un enlace de confirmación. Solo estás apuntado después de hacer clic — sin clic no pasa nada.',
       'Si has escrito por el formulario de contacto, normalmente respondemos en dos días laborables.',
     ],
     zurueck: 'Volver a la página de inicio',
@@ -408,30 +513,39 @@ export const es: Dictionary = {
         ],
       },
       {
-        titel: '4. Lista de espera y boletín (doble opt-in)',
+        titel: '4. Boletín «Correo del tueste» (doble opt-in)',
         absaetze: [
-          'Para la lista de espera se recoge la dirección de correo. El alta funciona con doble opt-in: tras enviar el formulario se manda un correo con un enlace de confirmación. El alta solo es efectiva al hacer clic en ese enlace. Sin confirmación, la dirección no entra en la lista.',
+          'Para el boletín se recoge la dirección de correo. El alta funciona con doble opt-in: tras enviar el formulario se manda un correo con un enlace de confirmación. El alta solo es efectiva al hacer clic en ese enlace. Sin confirmación, la dirección no entra en la lista.',
           'Como prueba del consentimiento se guardan el momento del alta, el momento de la confirmación y la dirección IP utilizada.',
           'La base jurídica es el art. 6.1.a del RGPD. El consentimiento puede retirarse en cualquier momento con efecto para el futuro — por el enlace de baja de cada correo o de forma libre a la dirección indicada arriba.',
           { text: '', todo: 'indicar el proveedor del boletín y firmar el contrato de encargado del tratamiento' },
         ],
       },
       {
-        titel: '5. Cookies y seguimiento',
+        titel: '5. Pedidos por WhatsApp y correo',
+        absaetze: [
+          'Los pedidos no pasan por un formulario de esta web. El botón de pedido abre WhatsApp o tu programa de correo con un mensaje ya escrito. No se envía nada hasta que tú mismo pulsas enviar.',
+          'Hasta entonces tu lista de pedido está solo en la memoria de tu propio navegador (localStorage), para que no se pierda al cambiar de página. No se nos transmite y desaparece en cuanto la vacías. No es una cookie y sirve solo para la función que tú mismo usas (§ 25, apdo. 2, n.º 2 TDDDG).',
+          'Tratamos nombre, dirección de entrega, datos de contacto y contenido del pedido para tramitarlo. La base jurídica es el art. 6.1.b RGPD. Los datos de facturación se conservan durante los plazos que exige la ley fiscal.',
+          { text: 'En WhatsApp interviene WhatsApp Ireland Ltd.; los metadatos pueden transferirse también a EE. UU. Quien no lo quiera, pide por correo. ', todo: 'revisar el uso de WhatsApp Business, los plazos de almacenamiento y de conservación' },
+        ],
+      },
+      {
+        titel: '6. Cookies y seguimiento',
         absaetze: [
           'Esta web no usa cookies. No hay medición de audiencia, no hay ningún servicio de análisis ni de publicidad integrado y no se cargan fuentes externas, mapas, plataformas de vídeo ni widgets de chat. Las tipografías que se usan están en el mismo servidor que la web.',
           'Por eso tampoco hay banner de cookies. En cuanto se añada un servicio que use cookies o acceda a información del dispositivo, habrá que pedir consentimiento antes según el § 25 TDDDG.',
         ],
       },
       {
-        titel: '6. Tus derechos',
+        titel: '7. Tus derechos',
         absaetze: [
           'Tienes derecho de acceso (art. 15), rectificación (art. 16), supresión (art. 17), limitación del tratamiento (art. 18), portabilidad (art. 20) y oposición (art. 21 del RGPD). Un consentimiento dado puede retirarse en cualquier momento con efecto para el futuro.',
           'Además tienes derecho a reclamar ante una autoridad de control. Normalmente es la del país donde resides; para Renania del Norte-Westfalia es la Comisionada estatal de protección de datos y libertad de información de NRW.',
         ],
       },
       {
-        titel: '7. Versión',
+        titel: '8. Versión',
         absaetze: [{ text: '', todo: 'añadir la fecha de la última actualización' }],
       },
     ],

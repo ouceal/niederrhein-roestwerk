@@ -7,6 +7,7 @@ import { Shell, Section, Kicker, Prose } from '@/components/Shell'
 import { ButtonLink } from '@/components/Button'
 import { Newsletter } from '@/components/Newsletter'
 import { CoffeeCard } from '@/components/CoffeeCard'
+import { Grossmengen } from '@/components/shop/Grossmengen'
 
 const Hero = heroes[HERO_VARIANTE]
 
@@ -94,8 +95,8 @@ export function Home({ lang }: { lang: Locale }) {
         </Shell>
       </Section>
 
-      {/* 5 — Die zwei Kaffees. Ohne Preis: es gibt noch nichts zu kaufen. */}
-      <Section tone="surface">
+      {/* 5 — Die zwei Kaffees, direkt bestellbar. */}
+      <Section tone="surface" id="shop">
         <Shell>
           <Kicker>{d.home.sortimentKicker}</Kicker>
           <h2 className="max-w-prose text-h2">{d.home.sortimentTitel}</h2>
@@ -114,7 +115,10 @@ export function Home({ lang }: { lang: Locale }) {
         </Shell>
       </Section>
 
-      {/* 6 — Warteliste */}
+      {/* 6 — Mehr als 1 kg */}
+      <Grossmengen lang={lang} />
+
+      {/* 7 — Roestpost */}
       <Newsletter lang={lang} />
     </>
   )
